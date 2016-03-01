@@ -1,0 +1,18 @@
+<section class="featured-album">
+
+</section>
+
+<section class="genres">
+
+</section>
+
+<section class="albums">
+  <h2>All</h2>
+  <% @albums.each do |album| %>
+    <div class="album-preview">
+      <%= image_tag album.image_url %>
+      <h3><%= album.title %></h3>
+      <h3>$<%= album.formatted_price %></h3>
+    </div>
+  <% end %>
+</section>
