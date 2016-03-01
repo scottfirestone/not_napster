@@ -7,7 +7,7 @@ RSpec.feature "Guest can view all albums" do
 
     visit albums_path
 
-    within(".albums") do
+    within(".albums-container") do
       expect(page).to have_content(album_1.title)
       expect(page).to have_content(album_1.formatted_price)
       expect(page).to have_content(album_2.title)

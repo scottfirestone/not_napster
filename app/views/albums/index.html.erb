@@ -14,10 +14,10 @@
 </div>
 
 <div class="container section-container albums-container">
-  <section class="albums clearfix">
+  <section class="clearfix">
     <h2>All</h2>
     <% @albums.each do |album| %>
-      <div class="album-preview">
+      <div class="preview">
         <%= image_tag album.image_url %>
         <h3><%= album.title %></h3>
         <h3>$<%= album.formatted_price %></h3>

@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :artist do
+    sequence(:name) { |n| "Artist #{n}" }
+    image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
+  end
+
   factory :genre do
     sequence(:name, ["Musak", "New Age"].cycle) { |n| n }
   end
