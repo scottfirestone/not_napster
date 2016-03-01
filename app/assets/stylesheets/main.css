@@ -24,8 +24,35 @@
 
 /* Main Styles */
 
+body {
+  color: #272727;
+  font-family: 'Crimson Text', serif;
+}
+
+h1, section h2, .site-logo, .site-nav {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 .container {
   padding: 0 7.5%;
+}
+
+.container h1 {
+  font-size: 3.6rem;
+}
+
+.container h2 {
+  margin: 0 0 40px 0;
+}
+
+h2 {
+  font-size: 3.6rem;
+  text-align: center;
 }
 
 /* Site Header */
@@ -74,17 +101,48 @@
 
 /* Album Index */
 
-.albums h2 {
-  font-size: 3.6rem;
-  text-align: center;
+.section-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.genres-container {
+  background-color: #FED766;
+}
+
+.albums-container {
+  background-color: #EFF1F3;
+}
+
+.genres {
+  padding: 0;
+}
+
+.genres li {
+  display: inline;
+  font-size: 1.2rem;
+  padding-right: 10%;
+}
+
+.genres a:hover {
+  text-decoration: underline;
 }
 
 .album-preview {
+  cursor: pointer;
   float: left;
-  padding: 0 2.5%;
+  opacity: .9;
+  padding: 0 2.5% 0 0;
+  -webit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+         transition: opacity .2s;
   width: 20%;
 }
 
+.album-preview:hover {
+  opacity: 1;
+}
+
 .album-preview img {
-  width: 180px;
+  width: 80%  ;
 }

@@ -3,15 +3,15 @@
 <head>
   <title>Not Napster</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render "layouts/header" %>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+  <%= yield %>
 
 </body>
 </html>
