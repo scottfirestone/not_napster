@@ -2,17 +2,26 @@
 
 </section>
 
-<section class="genres">
+<div class="container section-container genres-container">
+  <section class="genres">
+    <h2>Genres</h2>
+    <ul class="genres">
+      <% @genres.each do |genre| %>
+        <li><%= link_to genre.name, genre_path(genre.name) %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>
 
-</section>
-
-<section class="albums">
-  <h2>All</h2>
-  <% @albums.each do |album| %>
-    <div class="album-preview">
-      <%= image_tag album.image_url %>
-      <h3><%= album.title %></h3>
-      <h3>$<%= album.formatted_price %></h3>
-    </div>
-  <% end %>
-</section>
+<div class="container section-container albums-container">
+  <section class="albums clearfix">
+    <h2>All</h2>
+    <% @albums.each do |album| %>
+      <div class="album-preview">
+        <%= image_tag album.image_url %>
+        <h3><%= album.title %></h3>
+        <h3>$<%= album.formatted_price %></h3>
+      </div>
+    <% end %>
+  </section>
+</div>

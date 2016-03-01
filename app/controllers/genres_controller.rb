@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   def show
-    # binding.pry
-    @genre = Genre.find_by(name: params[:genre])
+    @genre = Genre.find_by(name: params[:genre].capitalize)
+    render file: "public/404" if @genre.nil?
   end
 end

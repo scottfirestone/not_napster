@@ -1,0 +1,148 @@
+/* Helper Classes */
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+
+/* Main Styles */
+
+body {
+  color: #272727;
+  font-family: 'Crimson Text', serif;
+}
+
+h1, section h2, .site-logo, .site-nav {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 7.5%;
+}
+
+.container h1 {
+  font-size: 3.6rem;
+}
+
+.container h2 {
+  margin: 0 0 40px 0;
+}
+
+h2 {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+/* Site Header */
+
+.site-header {
+  background-color: #272727;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 7.5%;
+}
+
+.site-header a {
+  color: #EFF1F3;
+  text-decoration: none;
+  -webkit-transition: color .2s;
+       -o-transition: color .2s;
+          transition: color .2s
+}
+
+.site-header a:hover {
+  color: #009FB7;
+}
+
+/* Site Logo */
+
+.site-logo {
+  font-size: 2.2rem;
+}
+
+/* Site Nav */
+
+.site-nav {
+  float: right;
+}
+
+.site-nav ul {
+  height: 80px;
+  margin: 0 0;
+}
+
+.site-nav li {
+  display: inline;
+  font-size: 1.1rem;
+  padding-left: 30px;
+}
+
+/* Album Index */
+
+.section-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.genres-container {
+  background-color: #FED766;
+}
+
+.albums-container {
+  background-color: #EFF1F3;
+}
+
+.genres {
+  padding: 0;
+}
+
+.genres li {
+  display: inline;
+  font-size: 1.2rem;
+  padding-right: 10%;
+}
+
+.genres a:hover {
+  text-decoration: underline;
+}
+
+.album-preview {
+  cursor: pointer;
+  float: left;
+  opacity: .9;
+  padding: 0 2.5% 0 0;
+  -webit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+         transition: opacity .2s;
+  width: 20%;
+}
+
+.album-preview:hover {
+  opacity: 1;
+}
+
+.album-preview img {
+  width: 80%  ;
+}
