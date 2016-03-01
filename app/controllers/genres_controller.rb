@@ -1,6 +1,5 @@
 class GenresController < ApplicationController
   def show
-    # binding.pry
-    @genre = Genre.find_by(name: params[:genre])
+    @genre = Genre.find_by(name: params[:genre].capitalize)
   end
 end

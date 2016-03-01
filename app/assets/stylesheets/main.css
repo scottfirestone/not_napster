@@ -1,0 +1,90 @@
+/* Helper Classes */
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+
+/* Main Styles */
+
+.container {
+  padding: 0 7.5%;
+}
+
+/* Site Header */
+
+.site-header {
+  background-color: #272727;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 7.5%;
+}
+
+.site-header a {
+  color: #EFF1F3;
+  text-decoration: none;
+  -webkit-transition: color .2s;
+       -o-transition: color .2s;
+          transition: color .2s
+}
+
+.site-header a:hover {
+  color: #009FB7;
+}
+
+/* Site Logo */
+
+.site-logo {
+  font-size: 2.2rem;
+}
+
+/* Site Nav */
+
+.site-nav {
+  float: right;
+}
+
+.site-nav ul {
+  height: 80px;
+  margin: 0 0;
+}
+
+.site-nav li {
+  display: inline;
+  font-size: 1.1rem;
+  padding-left: 30px;
+}
+
+/* Album Index */
+
+.albums h2 {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.album-preview {
+  float: left;
+  padding: 0 2.5%;
+  width: 20%;
+}
+
+.album-preview img {
+  width: 180px;
+}
