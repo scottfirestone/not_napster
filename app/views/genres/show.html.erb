@@ -1,0 +1,11 @@
+<h1><%= @genre.name %></h1>
+
+<section class="albums">
+  <% @genre.albums.each do |album| %>
+    <div class="album-preview">
+      <%= image_tag album.image_url %>
+      <h3><%= album.title %></h3>
+      <h3>$<%= album.formatted_price %></h3>
+    </div>
+  <% end %>
+</section>

@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :genre do
+    sequence(:name, ["Musak", "New Age"].cycle) { |n| n }
+  end
+
   factory :album do
     sequence(:title) { |n| "Title #{n}" }
     sequence(:description) { |n| "Description #{n}" }

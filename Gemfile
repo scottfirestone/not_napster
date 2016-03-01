@@ -37,9 +37,15 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem "factory_girl_rails"
+  gem "pry-rails"
+  gem "pry-nav"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem "database_cleaner"
 end
