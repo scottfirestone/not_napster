@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :albums, only: [:index]
   resources :artists, only: [:index]
 
+  resources :carts, only: [:index, :create]
+
   get "/:genre", to: "genres#show", as: "genre"
 end
