@@ -6,7 +6,5 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:index, :create, :destroy]
 
-  post "/carts", to: "carts#delete_item"
-
   get "/:genre", to: "genres#show", as: "genre"
 end
