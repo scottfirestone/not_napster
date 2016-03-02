@@ -1,0 +1,14 @@
+<h1> Cart </h1>
+
+<% @cart.contents.keys.each do |item| %>
+  <% Album.find(item.to_i) do |album| %>
+    <%= image_tag album.image_url %>
+    <%= album.title %>
+    <%= album.description %>
+    <%= album.formatted_price %>
+  <% end %>
+<% end %>
+
+<div class="total-price">
+  Total: $<%= @cart.formatted_total_price %>
+</div>
