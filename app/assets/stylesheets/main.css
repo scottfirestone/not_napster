@@ -22,9 +22,10 @@
 }
 /* close commented backslash hack */
 
-/* Main Styles */
+/* Base Styles */
 
 body {
+  background-color: #EFF1F3;
   color: #272727;
   font-family: 'Crimson Text', serif;
 }
@@ -108,10 +109,6 @@ h2 {
 
 .genres-container {
   background-color: #FED766;
-}
-
-.albums-container {
-  background-color: #EFF1F3;
 }
 
 .genres {
