@@ -139,10 +139,10 @@ h2 {
   width: 20%;
 }
 
-.album-preview:hover {
+.preview:hover {
   opacity: 1;
 }
 
-.album-preview img {
+.preview img {
   width: 80%  ;
 }
