@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :user do
+    username "MyString"
+    email "MyString"
+    password_digest "password"
+  end
+
   factory :artist do
     sequence(:name) { |n| "Artist #{n}" }
     image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
