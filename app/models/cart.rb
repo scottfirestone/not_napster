@@ -12,9 +12,19 @@ class Cart
     contents[album_id.to_s] += 1
   end
 
+  def remove_cart_album(album_id)
+    contents.delete(album_id)
+  end
+
   def cart_albums
     @contents.map do |album_id, quantity|
       [Album.find(album_id), quantity]
+    end
+  end
+
+  def albums
+    @contents.map do |album_id, _quantity|
+      Album.find(album_id)
     end
   end
 
