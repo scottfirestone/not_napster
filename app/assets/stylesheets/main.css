@@ -128,7 +128,7 @@ h2 {
   text-decoration: underline;
 }
 
-.album-preview {
+.preview {
   cursor: pointer;
   float: left;
   opacity: .9;

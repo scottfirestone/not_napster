@@ -1,0 +1,14 @@
+<section class="jumbotron container">
+  <h1>Artists</h1>
+</section>
+
+<div class="container">
+  <section class="clearfix">
+    <% @artists.each do |artist| %>
+      <div class="preview">
+        <%= image_tag artist.image_url %>
+        <h3><%= artist.name %></h3>
+      </div>
+    <% end %>
+  </section>
+</div>
