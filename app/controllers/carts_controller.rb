@@ -14,4 +14,9 @@ class CartsController < ApplicationController
     @cart.remove_cart_album(params[:id])
     redirect_to carts_path
   end
+
+  def plus_one
+    @cart.add_one
+    redirect_to carts_path
+  end
 end
