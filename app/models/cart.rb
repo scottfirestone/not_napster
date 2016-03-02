@@ -29,6 +29,10 @@ class Cart
     end
   end
 
+  def album_quantity(album_id)
+    @contents[album_id.to_s]
+  end
+
   def cart_album_price(cart_album)
     cart_album[0].price * cart_album[1]
   end
@@ -44,6 +48,7 @@ class Cart
   end
 
   def add_one
+    #ignore
     @quantity += 1
   end
 end

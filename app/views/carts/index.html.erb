@@ -5,15 +5,11 @@
   <%= album.title %>
   <%= album.description %>
   <%= album.formatted_price %>
+  Quantity: <%= @cart.album_quantity(album.id) %>
   <%= button_to "Remove", {:controller => :carts,
       :action => 'destroy', :id => album.id }, :method => :delete %>
 <% end %>
 
 <div class="total-price">
   Total: $<%= @cart.formatted_total_price %>
-</div>
-
-<div id="cart_quantity">
-  Quantity: <%= @cart.quantity %>
-
 </div>
