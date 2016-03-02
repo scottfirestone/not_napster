@@ -41,4 +41,20 @@ RSpec.feature "Guest can create an account" do
       expect(page).to have_link("Logout")
     end
   end
+
+  context "without username" do
+    scenario "they see an error message" do
+      visit root_path
+
+      click_link "Create Account"
+      fill_in "Username", with: ""
+      fill_in "Email", with: "user@example.com"
+      fill_in "Password", with: "password"
+      click_button "Create Account"
+
+      within ".errors" do
+        expect(page).to have_content "Invalid Account Details"
+      end
+    end
+  end
 end
