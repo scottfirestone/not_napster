@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   get "/dashboard", to: "users#show", as: "dashboard"
 
-  resources :carts, only: [:index, :create]
+  resources :carts, only: [:index, :create, :destroy]
 
   get "/:genre", to: "genres#show", as: "genre"
 end
