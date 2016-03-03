@@ -12,9 +12,7 @@ RSpec.feature "Guest removes an item from cart" do
     expect(page).to have_content album.title
     expect(page).to have_content album.description
     expect(page).to have_content album.formatted_price
-    within(".total-price") do
-      expect(page).to have_content "Total: $#{album.formatted_price}"
-    end
+    expect(page).to have_content "Total: $#{album.formatted_price}"
 
     click_on "Remove"
 
@@ -22,9 +20,7 @@ RSpec.feature "Guest removes an item from cart" do
     expect(page).to_not have_content album.title
     expect(page).to_not have_content album.description
     expect(page).to_not have_content album.formatted_price
-    within(".total-price") do
-      expect(page).to_not have_content "Total: $1.00"
-    end
+    expect(page).to_not have_content "Total: $1.00"
 
     expect(page).to have_content("Total: $0.00")
   end

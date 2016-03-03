@@ -70,9 +70,7 @@ RSpec.feature "Guest can create an account" do
       expect(page).to have_content album.title
       expect(page).to have_content album.description
       expect(page).to have_content album.formatted_price
-      within(".total-price") do
-        expect(page).to have_content "Total: $1.00"
-      end
+      expect(page).to have_content "Total: $1.00"
 
       visit root_path
       click_link "Create Account"
@@ -87,9 +85,7 @@ RSpec.feature "Guest can create an account" do
       expect(page).to have_content album.title
       expect(page).to have_content album.description
       expect(page).to have_content album.formatted_price
-      within(".total-price") do
-        expect(page).to have_content "Total: $1.00"
-      end
+      expect(page).to have_content "Total: $1.00"
 
       click_link "Logout"
 
