@@ -13,7 +13,7 @@ RSpec.feature "Guest adds items to cart" do
     expect(page).to have_content album.title
     expect(page).to have_content album.description
     expect(page).to have_content album.formatted_price
-    within(".total-price") do
+    within(".cart-total") do
       expect(page).to have_content "Total: $1.00"
     end
 
@@ -21,7 +21,7 @@ RSpec.feature "Guest adds items to cart" do
     click_on "Add to cart"
     click_on "Cart"
 
-    within(".total-price") do
+    within(".cart-total") do
       expect(page).to have_content "Total: $2.00"
     end
   end

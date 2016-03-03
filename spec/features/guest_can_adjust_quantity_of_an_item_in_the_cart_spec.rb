@@ -11,17 +11,17 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
     expect(page).to have_content album.title
     expect(page).to have_content album.description
     expect(page).to have_content album.formatted_price
-    within(".album_quantity") do
+    within(".album-quantity") do
       expect(page).to have_content "1"
     end
 
     click_link_or_button "+1"
 
-    within(".cart_quantity") do
+    within(".cart-item") do
       expect(page).to have_content "2"
     end
 
-    within(".total-price") do
+    within(".cart-total") do
       expect(page).to have_content "Total: $2.00"
     end
   end
@@ -36,20 +36,20 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
     expect(page).to have_content album.title
     expect(page).to have_content album.description
     expect(page).to have_content album.formatted_price
-    within(".album_quantity") do
+    within(".album-quantity") do
       expect(page).to have_content "1"
     end
 
     click_link_or_button "+1"
     click_link_or_button "+1"
 
-    within(".album_quantity") do
+    within(".album-quantity") do
       expect(page).to have_content "3"
     end
 
     click_link_or_button "-1"
 
-    within(".album_quantity") do
+    within(".album-quantity") do
       expect(page).to have_content "2"
     end
   end
@@ -64,7 +64,7 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
     expect(page).to have_content album.title
     expect(page).to have_content album.description
     expect(page).to have_content album.formatted_price
-    within(".album_quantity") do
+    within(".album-quantity") do
       expect(page).to have_content "1"
     end
 
