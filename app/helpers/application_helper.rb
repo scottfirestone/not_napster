@@ -1,7 +1,7 @@
 module ApplicationHelper
   def login_logout_link(current_user)
     if current_user
-      link_to "Logout", "#"
+      link_to "Logout", logout_path, method: :delete
     else
       link_to "Login", "#"
     end

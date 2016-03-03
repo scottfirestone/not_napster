@@ -29,7 +29,7 @@ FactoryGirl.define do
     sequence(:description) { |n| "Description #{n}" }
     release_year "1994"
     image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
-    sequence(:price) { |n| n + 99 }
+    price 100
     artist
   end
 end

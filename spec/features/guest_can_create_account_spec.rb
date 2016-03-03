@@ -57,4 +57,46 @@ RSpec.feature "Guest can create an account" do
       end
     end
   end
+
+  context "with album in the cart" do
+    scenario "they still have the album in their cart" do
+      album = FactoryGirl.create(:album)
+
+      visit albums_path
+      click_on "Add to cart"
+      click_link "Cart"
+
+      expect(page).to have_css("img[src*='#{album.image_url}']")
+      expect(page).to have_content album.title
+      expect(page).to have_content album.description
+      expect(page).to have_content album.formatted_price
+      within(".total-price") do
+        expect(page).to have_content "Total: $1.00"
+      end
+
+      visit root_path
+      click_link "Create Account"
+      fill_in "Username", with: "julsfelic"
+      fill_in "Email", with: "julsfelic@gmail.com"
+      fill_in "Password", with: "password"
+      click_button "Create Account"
+
+      visit user_cart_path
+
+      expect(page).to have_css("img[src*='#{album.image_url}']")
+      expect(page).to have_content album.title
+      expect(page).to have_content album.description
+      expect(page).to have_content album.formatted_price
+      within(".total-price") do
+        expect(page).to have_content "Total: $1.00"
+      end
+
+      click_link "Logout"
+
+      within(".site-nav") do
+        expect(page).to_not have_link("Logout")
+        expect(page).to have_link("Login")
+      end
+    end
+  end
 end
