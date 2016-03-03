@@ -23,4 +23,23 @@ RSpec.feature "User can login" do
       expect(page).to have_link("Logout")
     end
   end
+
+  context "with invalid username" do
+    scenario "they get an error message" do
+      FactoryGirl.create(:user)
+
+      visit root_path
+      click_link "Login"
+
+      fill_in "Username", with: ""
+      fill_in "Password", with: "password"
+      click_button "Login"
+
+      expect(current_path).to eq(login_path)
+
+      within(".errors") do
+        expect(page).to have_content("Invalid Credentials")
+      end
+    end
+  end
 end

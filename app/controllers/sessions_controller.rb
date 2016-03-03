@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -9,6 +8,9 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       log_in(@user)
       redirect_to dashboard_path
+    else
+      flash[:errors] = "Invalid Credentials"
+      render :new
     end
   end
 
