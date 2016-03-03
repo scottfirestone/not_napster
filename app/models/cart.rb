@@ -1,11 +1,14 @@
 class Cart
   include ActionView::Helpers::NumberHelper
 
-  attr_reader :contents, :quantity
+  attr_reader :contents
 
   def initialize(initial_contents)
     @contents = initial_contents || {}
-    @quantity = contents.values.sum
+  end
+
+  def quantity
+    contents.values.sum
   end
 
   def add_album(album_id)
@@ -47,8 +50,11 @@ class Cart
     number_with_precision(total_price / 100.0, precision: 2)
   end
 
-  def add_one
-    #ignore
-    @quantity += 1
-  end
+  def add_one(album_id)
+    @contents[album_id.to_s] += 1
+  end.to_s
+
+  def minus_one(album_id)
+    @contents[album_id.to_s] -= 1
+  end.to_s
 end

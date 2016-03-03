@@ -15,8 +15,13 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def plus_one
-    @cart.add_one
-    redirect_to carts_path
+  def update
+    if params["operator"] == "+"
+      @cart.add_one(params[:id])
+      redirect_to carts_path
+    elsif params["operator"] == "-"
+      @cart.minus_one(params[:id])
+      redirect_to carts_path
+    end
   end
 end
