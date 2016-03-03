@@ -22,7 +22,7 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
     end
 
     within(".total-price") do
-      expect(page).to have_content "Total: $2.02"
+      expect(page).to have_content "Total: $2.00"
     end
   end
 
