@@ -14,4 +14,14 @@ class CartsController < ApplicationController
     @cart.remove_cart_album(params[:id])
     redirect_to carts_path
   end
+
+  def update
+    if params["operator"] == "+"
+      @cart.add_one(params[:id])
+      redirect_to carts_path
+    elsif params["operator"] == "-"
+      @cart.minus_one(params[:id])
+      redirect_to carts_path
+    end
+  end
 end

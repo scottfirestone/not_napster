@@ -7,6 +7,10 @@ class Cart
     @contents = initial_contents || {}
   end
 
+  def quantity
+    contents.values.sum
+  end
+
   def add_album(album_id)
     contents[album_id.to_s] ||= 0
     contents[album_id.to_s] += 1
@@ -28,6 +32,10 @@ class Cart
     end
   end
 
+  def album_quantity(album_id)
+    @contents[album_id.to_s]
+  end
+
   def cart_album_price(cart_album)
     cart_album[0].price * cart_album[1]
   end
@@ -41,4 +49,12 @@ class Cart
   def formatted_total_price
     number_with_precision(total_price / 100.0, precision: 2)
   end
+
+  def add_one(album_id)
+    @contents[album_id.to_s] += 1
+  end.to_s
+
+  def minus_one(album_id)
+    @contents[album_id.to_s] -= 1
+  end.to_s
 end
