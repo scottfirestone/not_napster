@@ -57,4 +57,8 @@ class Cart
   def minus_one(album_id)
     @contents[album_id.to_s] -= 1
   end.to_s
+
+  def navigation_quantity
+    "( #{quantity} )" unless quantity.zero?
+  end
 end
