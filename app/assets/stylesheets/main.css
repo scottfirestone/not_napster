@@ -186,3 +186,61 @@ h2 {
 .preview img {
   width: 80%  ;
 }
+
+/******************************
+  Cart Page
+*******************************/
+
+.cart-items h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.cart-item {
+  margin-bottom: 40px;
+}
+
+.cart-item img {
+  float: left;
+  width: 15%;
+}
+
+.cart-item h2, .cart-item h3, .cart-item h4 {
+  margin: 0;
+  text-align: left;
+}
+
+.cart-item h2 {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.cart-item h3 {
+  font-size: 1.3rem;
+}
+
+.cart-item h4, .cart-quantity h4 {
+  font-size: 2rem;
+}
+
+.cart-item .album-quantity {
+  font-size: 1.2rem;
+}
+
+.album-info {
+  padding-left: 220px;
+}
+
+.cart-buttons {
+  padding-top: 22px;
+}
+
+.cart-item form {
+  float: left;
+  margin-right: 20px;
+}
+
+.cart-total h4 {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+}
