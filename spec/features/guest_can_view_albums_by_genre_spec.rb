@@ -10,7 +10,7 @@ RSpec.feature "Guest can view albums by genre" do
     genre_1.albums << album_1 << album_2
     genre_2.albums << album_3 << album_4
 
-    visit genre_path(album_1.genre.name)
+    visit genre_path(album_1.genre)
 
     expect(page).to have_content("Musak")
     expect(page).to have_content(album_1.title)

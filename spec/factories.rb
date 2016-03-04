@@ -22,6 +22,9 @@ FactoryGirl.define do
 
   factory :genre do
     sequence(:name, ["Musak", "New Age"].cycle) { |n| n }
+    sequence(:slug, ["Musak", "New Age"].cycle) do |n|
+      n.downcase.gsub(/\s/, "-")
+    end
   end
 
   factory :album do
