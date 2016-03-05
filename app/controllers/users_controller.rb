@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
-      redirect_to dashboard_path(id: @user.id)
+      redirect_to dashboard_path
     else
       flash[:errors] = "Invalid Account Details"
       render :new

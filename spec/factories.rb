@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    username "example"
-    email "example@example.com"
+    sequence(:username) { |n| "User #{n}" }
+    sequence(:email) { |n| "example#{n}@example.com" }
     password "password"
   end
 
@@ -22,6 +22,9 @@ FactoryGirl.define do
 
   factory :genre do
     sequence(:name, ["Musak", "New Age"].cycle) { |n| n }
+    sequence(:slug, ["Musak", "New Age"].cycle) do |n|
+      n.downcase.gsub(/\s/, "-")
+    end
   end
 
   factory :album do
