@@ -40,11 +40,11 @@ RSpec.describe Cart, type: :model do
   end
 
   it "can change album quantity" do
-    cart = Cart.new({ "1" => 2 })
+    cart = Cart.new("1" => 2)
 
     cart.change_quantity("+", 1)
 
-    expected_contents = { "1" => 3}
+    expected_contents = { "1" => 3 }
 
     expect(cart.contents).to eq(expected_contents)
   end
