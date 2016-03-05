@@ -3,10 +3,12 @@
 
   <nav class="site-nav">
     <ul>
+      <li><%= username(current_user) %></li>
       <li><%= link_to "Artists", artists_path %></li>
       <li><%= link_to "Albums", albums_path %></li>
       <!-- use path helper & glyphcon? -->
-      <li><%= link_to "Cart", carts_path %></li>
+      <li><%= link_to "Cart #{@cart.navigation_quantity}", user_cart_path %></li>
+      <li><%= login_logout_link(current_user) %></li>
     </ul>
   </nav>
 </header>

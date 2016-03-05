@@ -32,4 +32,10 @@ RSpec.describe Cart, type: :model do
 
     expect(cart.formatted_total_price).to eq("36.00")
   end
+
+  it "can return total number of items in the cart" do
+    cart = Cart.new("1" => 5, "2" => 9)
+
+    expect(cart.quantity).to eq(14)
+  end
 end

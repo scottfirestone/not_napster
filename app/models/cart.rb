@@ -7,15 +7,33 @@ class Cart
     @contents = initial_contents || {}
   end
 
+  def quantity
+    contents.values.sum
+  end
+
   def add_album(album_id)
     contents[album_id.to_s] ||= 0
     contents[album_id.to_s] += 1
+  end
+
+  def remove_cart_album(album_id)
+    contents.delete(album_id)
   end
 
   def cart_albums
     @contents.map do |album_id, quantity|
       [Album.find(album_id), quantity]
     end
+  end
+
+  def albums
+    @contents.map do |album_id, _quantity|
+      Album.find(album_id)
+    end
+  end
+
+  def album_quantity(album_id)
+    @contents[album_id.to_s]
   end
 
   def cart_album_price(cart_album)
@@ -30,5 +48,17 @@ class Cart
 
   def formatted_total_price
     number_with_precision(total_price / 100.0, precision: 2)
+  end
+
+  def add_one(album_id)
+    @contents[album_id.to_s] += 1
+  end.to_s
+
+  def minus_one(album_id)
+    @contents[album_id.to_s] -= 1
+  end.to_s
+
+  def navigation_quantity
+    "( #{quantity} )" unless quantity.zero?
   end
 end

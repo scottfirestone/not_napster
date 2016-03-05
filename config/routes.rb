@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   root to: "static_pages#landing"
 
-  resources :albums, only: [:index]
+  resources :albums,  only: [:index]
   resources :artists, only: [:index, :show], param: :artist_name
 
-  resources :carts, only: [:index, :create]
+  resources :users, only: [:new, :create]
+  resources :carts, only: [:index, :create, :destroy, :update]
 
-  get "/:genre", to: "genres#show", as: "genre"
+  get "/dashboard", to: "users#show"
+
+  get "/login",     to: "sessions#new"
+  post "/login",    to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  get "/cart",      to: "carts#index", as: "user_cart"
+  get "/:genre",    to: "genres#show", as: "genre"
 end

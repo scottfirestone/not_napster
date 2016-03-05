@@ -1,0 +1,22 @@
+<aside class="user-sidebar">
+  <ul>
+    <li><%= link_to "Account Details", dashboard_path(@user.id) %></li>
+    <li><%= link_to "Update Account", "#" %></li>
+    <li><%= link_to "Post Orders", "#" %></li>
+    <li><%= link_to "My Albums", "#" %></li>
+    <li><%= link_to "My Reviews", "#" %></li>
+  </ul>
+</aside>
+
+<section class="user">
+  <h1>Account Details</h1>
+
+  <ul>
+    <li>
+      Username: <%= @user.username %>
+    </li>
+    <li>
+      Email: <%= @user.email %>
+    </li>
+  </ul>
+</section>

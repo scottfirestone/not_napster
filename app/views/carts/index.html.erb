@@ -1,14 +1,31 @@
-<h1> Cart </h1>
+<section class="cart-items container">
+  <h1> Cart </h1>
 
-<% @cart.contents.keys.each do |item| %>
-  <% Album.find(item.to_i) do |album| %>
-    <%= image_tag album.image_url %>
-    <%= album.title %>
-    <%= album.description %>
-    <%= album.formatted_price %>
-  <% end %>
-<% end %>
+    <% @cart.albums.each do |album| %>
+      <section class="cart-item clearfix">
+        <% if @cart.album_quantity(album.id) != 0 %>
+          <%= image_tag album.image_url %>
+          <div class="album-info">
+            <h2><%= album.title %></h2>
+            <h3><%= album.description %></h3>
+            <h4>$<%= album.formatted_price %></h4>
+            <h4 class="album-quantity">
+              Quantity: <%= @cart.album_quantity(album.id) %>
+            </h4>
+            <div class="cart-buttons clearfix">
+              <%= button_to "+1", cart_path(id: album.id, operator: "+"), method: :put %>
+              <%= button_to "-1", cart_path(id: album.id, operator: "-"), method: :put %>
 
-<div class="total-price">
-  Total: $<%= @cart.formatted_total_price %>
-</div>
+              <%= button_to "Remove", { :controller => :carts,
+                  :action => "destroy", :id => album.id }, :method => :delete %>
+            </div>
+          </div>
+        <% end %>
+      </section>
+    <% end %>
+
+  <section class="cart-total">
+    <h4>Item Count: <%= @cart.quantity %></h4>
+    <h4>Total: $<%= @cart.formatted_total_price %></h4>
+  </section>
+</section>

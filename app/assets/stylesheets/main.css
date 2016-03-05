@@ -22,9 +22,10 @@
 }
 /* close commented backslash hack */
 
-/* Main Styles */
+/* Base Styles */
 
 body {
+  background-color: #EFF1F3;
   color: #272727;
   font-family: 'Crimson Text', serif;
 }
@@ -55,6 +56,41 @@ h2 {
   text-align: center;
 }
 
+.button {
+  background-color: #EFF1F3;
+  border-radius: 10px;
+  display: inline-block;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 30px auto 0;
+  padding: 10px 40px 10px 40px;
+  transition: color .1s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 0px 1px #fff, 0px -1px #262F33;
+}
+
+.button:hover {
+  color: #009FB7;
+  cursor: pointer;
+  text-shadow: 0px -1px #97A63A;
+}
+
+.jumbotron {
+  height: 410px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.jumbotron h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.sidewinder {
+  color: #c80000;
+}
+
 /* Site Header */
 
 .site-header, .site-footer {
@@ -72,7 +108,7 @@ h2 {
   text-decoration: none;
   -webkit-transition: color .2s;
        -o-transition: color .2s;
-          transition: color .2s
+          transition: color .2s;
 }
 
 .site-header a:hover {
@@ -131,6 +167,12 @@ h2 {
   width: 7.5%;
 }
 
+/* Landing Page */
+
+.landing-callout {
+  background-color: #eaeaca;
+}
+
 /* Album Index */
 
 .section-container {
@@ -140,10 +182,6 @@ h2 {
 
 .genres-container {
   background-color: #FED766;
-}
-
-.albums-container {
-  background-color: #EFF1F3;
 }
 
 .genres {
@@ -177,4 +215,62 @@ h2 {
 
 .preview img {
   width: 80%  ;
+}
+
+/******************************
+  Cart Page
+*******************************/
+
+.cart-items h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.cart-item {
+  margin-bottom: 40px;
+}
+
+.cart-item img {
+  float: left;
+  width: 15%;
+}
+
+.cart-item h2, .cart-item h3, .cart-item h4 {
+  margin: 0;
+  text-align: left;
+}
+
+.cart-item h2 {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.cart-item h3 {
+  font-size: 1.3rem;
+}
+
+.cart-item h4, .cart-quantity h4 {
+  font-size: 2rem;
+}
+
+.cart-item .album-quantity {
+  font-size: 1.2rem;
+}
+
+.album-info {
+  padding-left: 220px;
+}
+
+.cart-buttons {
+  padding-top: 22px;
+}
+
+.cart-item form {
+  float: left;
+  margin-right: 20px;
+}
+
+.cart-total h4 {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
 }
