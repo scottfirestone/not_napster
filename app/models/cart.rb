@@ -58,6 +58,14 @@ class Cart
     @contents[album_id.to_s] -= 1
   end.to_s
 
+  def change_quantity(operator, album_id)
+    if operator == "+"
+      add_one(album_id)
+    elsif operator == "-"
+      minus_one(album_id)
+    end
+  end
+
   def navigation_quantity
     "( #{quantity} )" unless quantity.zero?
   end
