@@ -4,7 +4,7 @@ RSpec.feature "Guest can view artist page" do
   scenario "they can see artist page" do
     artist = FactoryGirl.create(:artist_with_albums)
 
-    visit artist_path(artist.name)
+    visit artist_path(artist)
 
     artist.albums.each do |album|
       expect(page).to have_css("img[src*='#{album.image_url}']")
