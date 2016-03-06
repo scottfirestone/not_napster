@@ -19,7 +19,7 @@ RSpec.feature "Guest can create an account" do
     expect(current_path).to eq(dashboard_path)
 
     within(".site-nav") do
-      expect(page).to have_content("Logged in as #{user.username}")
+      expect(page).to have_content(user.username)
     end
 
     within(".user-sidebar") do

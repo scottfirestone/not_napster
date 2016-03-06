@@ -1,0 +1,13 @@
+<section class="jumbotron container">
+  <h1>Admin Dashboard</h1>
+</section>
+
+username: <%= @user.username %>
+email: <%= @user.email %>
+
+<div class="container">
+  <section class="clearfix">
+    <h3><%= link_to "Edit Account", edit_admin_info_path %></h3>
+    <h3><%= link_to "View Albums", albums_path %></h3>
+  </section>
+</div>

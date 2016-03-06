@@ -1,11 +1,13 @@
-<h1>Login</h1>
+<section class="container user-form-container">
+  <h1>Login</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.submit "Login" %>
-<% end %>
+    <%= f.submit "Login" %>
+  <% end %>
+</section>

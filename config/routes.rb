@@ -16,4 +16,9 @@ Rails.application.routes.draw do
 
   get "/cart",      to: "carts#index", as: "user_cart"
   get "/:genre",    to: "genres#show", as: "genre"
+
+  namespace :admin do
+    resource :dashboard, only: [:show]
+    resource :info,      only: [:edit, :update]
+  end
 end

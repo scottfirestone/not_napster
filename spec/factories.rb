@@ -1,13 +1,14 @@
 FactoryGirl.define do
   factory :user do
-    username "example"
-    email "example@example.com"
+    sequence(:username) { |n| "User #{n}" }
+    sequence(:email) { |n| "example#{n}@example.com" }
     password "password"
   end
 
   factory :artist do
     sequence(:name) { |n| "Artist #{n}" }
     image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
+    sequence(:slug) { |n| "Artist #{n}".downcase.gsub(/\s/, "-") }
 
     factory :artist_with_albums do
       transient do
@@ -22,6 +23,9 @@ FactoryGirl.define do
 
   factory :genre do
     sequence(:name, ["Musak", "New Age"].cycle) { |n| n }
+    sequence(:slug, ["Musak", "New Age"].cycle) do |n|
+      n.downcase.gsub(/\s/, "-")
+    end
   end
 
   factory :album do
