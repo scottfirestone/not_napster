@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302211224) do
+ActiveRecord::Schema.define(version: 20160306211401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,26 @@ ActiveRecord::Schema.define(version: 20160302211224) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_albums", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "album_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_albums", ["album_id"], name: "index_order_albums_on_album_id", using: :btree
+  add_index "order_albums", ["order_id"], name: "index_order_albums_on_order_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "total"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -54,4 +74,7 @@ ActiveRecord::Schema.define(version: 20160302211224) do
 
   add_foreign_key "albums", "artists"
   add_foreign_key "albums", "genres"
+  add_foreign_key "order_albums", "albums"
+  add_foreign_key "order_albums", "orders"
+  add_foreign_key "orders", "users"
 end

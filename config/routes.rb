@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :carts, only: [:index, :create, :destroy, :update]
+  resource :order, only: [:new, :show, :create]
 
   get "/dashboard", to: "users#show"
 
