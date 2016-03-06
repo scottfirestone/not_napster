@@ -1,0 +1,10 @@
+<section class="container section-container">
+  <aside>
+    <h1><%= @album.title %></h1>
+    <h2><%= @album.artist.name %></h2>
+  </aside>
+
+  <footer>
+    <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
+  </footer>
+</section>

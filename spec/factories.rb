@@ -34,6 +34,7 @@ FactoryGirl.define do
     release_year "1994"
     image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
     price 100
+    sequence(:slug) { |n| "Title #{n}".downcase.gsub(/\s/, "-") }
     artist
   end
 end

@@ -8,14 +8,16 @@ RSpec.feature "User can view an artist page" do
       description: "An album by Miles Davis",
       image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bitches_brew.jpg/220px-Bitches_brew.jpg",
       release_year: 1970,
-      price: 1500
+      price: 1500,
+      slug: "bitches-brew"
     )
     album_2 = artist.albums.create(
       title: "Kind of Blue",
       description: "Another album by Miles Daivs",
       image_url: "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg",
       release_year: 1959,
-      price: 1700
+      price: 1700,
+      slug: "kind-of-blue"
     )
 
     visit albums_path
