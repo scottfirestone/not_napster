@@ -1,14 +1,17 @@
-<section class="jumbotron container">
-  <h1> <%= @artist.name %> </h1>
+<section class="jumbotron container artist-show headline">
+  <h1> <%= @artist.name.upcase %> </h1>
 </section>
 
-<div class="container">
+<div class="container section-container">
   <section class="clearfix">
     <h2>Albums</h2>
     <% @artist.albums.each do |album| %>
-      <%= image_tag album.image_url %>
-      <h3> <%= album.title %> </h3>
-      <h3> <%= album.formatted_price %> </h3>
+      <div class="preview">
+        <%= image_tag album.image_url %>
+        <h3 class="album-title"> <%= album.title %> </h3>
+        <h3 class="cost">$<%= album.formatted_price %> </h3>
+        <%= button_to "Add to cart", carts_path(album_id: album.id)%>
+      </div>
     <% end %>
   </section>
 </div>
