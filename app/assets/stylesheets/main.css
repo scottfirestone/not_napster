@@ -73,7 +73,8 @@ input:-webkit-autofill {
 }
 
 .container h2 {
-  margin: 0 0 40px 0;
+  margin: 0 0 50px 0;
+  text-decoration: underline;
 }
 
 h2 {
@@ -229,13 +230,33 @@ h2 {
 
 .preview {
   cursor: pointer;
-  float: left;
+  display: inline-block;
+  margin-bottom: 40px;
   opacity: .9;
-  padding: 0 2.5% 0 0;
+  padding: 0 1.7%;
   -webit-transition: opacity .2s;
     -moz-transition: opacity .2s;
          transition: opacity .2s;
-  width: 20%;
+  width: 21.25%;
+}
+
+.preview .album-title {
+  font-size: 1.4rem;
+  margin: 0;
+  padding-top: 3%;
+}
+
+.preview .artist {
+  margin: 0;
+  padding-top: 3%;
+}
+
+.preview .artist:hover {
+  text-decoration: underline;
+}
+
+.preview .cost {
+  margin: 10px 0;
 }
 
 .preview:hover {
@@ -243,7 +264,7 @@ h2 {
 }
 
 .preview img {
-  width: 80%  ;
+  width: 100%  ;
 }
 
 /******************************
@@ -302,4 +323,28 @@ h2 {
 .cart-total h4 {
   font-size: 2rem;
   margin: 0 0 20px 0;
+}
+
+/* Artist Show Page */
+.headline {
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  justify-content: center;
+  text-align: center
+}
+
+.headline h1 {
+  font-size: 10rem;
+  color: #fff;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.artist-show {
+  background-color: #007EA7;
+}
+
+.artists-show {
+  background-color: #FA7921;
 }
