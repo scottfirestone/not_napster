@@ -22,7 +22,7 @@ RSpec.feature "User can view an artist page" do
     click_link "Miles Davis", match: :first
 
     expect(current_path).to eq("/artists/miles-davis")
-    expect(page).to have_content("MILES DAVIS")
+    expect(page).to have_content("Miles Davis")
     expect(page).to have_content(album_1.title)
     expect(page).to have_content(album_2.title)
   end
