@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource :dashboard, only: [:show]
+    resource :info,      only: [:edit, :update]
   end
 end
