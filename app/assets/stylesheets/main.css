@@ -39,6 +39,31 @@ a {
   text-decoration: none;
 }
 
+label {
+  display: block;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.container input {
+  border: 0;
+  font-size: 1rem;
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom: 14px;
+  padding: 20px;
+  width: 60%;
+}
+
+.container input[type=submit] {
+  margin-top: 14px;
+  width: 63.2%;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+}
+
 .container {
   padding: 0 7.5%;
 }
@@ -182,6 +207,10 @@ h2 {
 
 .genres-container {
   background-color: #FED766;
+}
+
+.user-form-container {
+  height: 580px;
 }
 
 .genres {
