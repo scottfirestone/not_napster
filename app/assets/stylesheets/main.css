@@ -327,7 +327,10 @@ h2 {
 
 /* Artist Show Page */
 .headline {
-  line-height: 410px;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  justify-content: center;
   text-align: center
 }
 
