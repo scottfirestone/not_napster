@@ -335,6 +335,7 @@ h2 {
   font-size: 10rem;
   color: #fff;
   text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .artist-show {

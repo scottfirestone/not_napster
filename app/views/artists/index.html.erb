@@ -6,8 +6,8 @@
   <section class="clearfix">
     <% @artists.each do |artist| %>
       <div class="preview">
-        <%= image_tag artist.image_url %>
-        <h3><%= artist.name %></h3>
+        <%= link_to image_tag(artist.image_url), artist %>
+        <h3><%= link_to artist.name, artist %></h3>
       </div>
     <% end %>
   </section>
