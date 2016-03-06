@@ -8,6 +8,7 @@ FactoryGirl.define do
   factory :artist do
     sequence(:name) { |n| "Artist #{n}" }
     image_url "http://cdn.pitchfork.com/albums/18689/homepage_large.111d1a3b.jpg"
+    sequence(:slug) { |n| "Artist #{n}".downcase.gsub(/\s/, "-") }
 
     factory :artist_with_albums do
       transient do
