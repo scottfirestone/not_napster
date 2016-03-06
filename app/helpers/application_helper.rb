@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def username(current_user)
     if current_user
-      "Logged in as #{current_user.username}"
+      link_to current_user.username, dashboard_path
     else
       "Guest"
     end
