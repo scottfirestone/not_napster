@@ -427,3 +427,18 @@ h2 {
 .album input[type='submit'] {
   width: 306px;
 }
+
+/* Flash */
+
+.flash {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.4rem;
+  padding: 20px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.info {
+  background-color: rgba(156,231,172, 0.6); 
+}
