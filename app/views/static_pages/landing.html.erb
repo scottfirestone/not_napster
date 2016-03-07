@@ -2,3 +2,15 @@
   <h1>Your<br>Music<br><span class="sidewinder">Resource</span></h1>
   <%= link_to "Create Account", new_user_path, class: "button" %>
 </section>
+
+<div class="container section-container">
+  <div class="clearfix row">
+    <h2>Discovery</h2>
+    <% @discovery_albums.each do |album| %>
+      <div class="preview">
+        <%= link_to image_tag(album.image_url), album %>
+        <h3 class="album-title"><%= link_to album.title, album %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
