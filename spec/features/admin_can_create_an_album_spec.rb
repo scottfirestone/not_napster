@@ -24,12 +24,8 @@ RSpec.feature "Admin can create an album" do
 
     fill_in "Title", with: "Kind of Blue"
     fill_in "Slug",  with: "kind-of-blue"
-
     find(".artistSelect").find(:xpath, '//option[contains(text(), "Miles Davis")]').select_option
-
     find(".genreSelect").find(:xpath, '//option[contains(text(), "Jazz")]').select_option
-
-
     fill_in "Description", with: "A must-have for any music collection"
     fill_in "Image url", with: "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg"
     fill_in "Release year", with: "1959"
@@ -40,7 +36,7 @@ RSpec.feature "Admin can create an album" do
     album = Album.last
 
     expect(current_path).to eq(album_path(album))
-    expect(page).to have_content("#{album.title} has been created!")
+    expect(page).to have_content("#{album.title} has been created")
     expect(page).to have_css("img[src*='#{album.image_url}']")
     expect(page).to have_content(album.title)
     expect(page).to have_content(album.artist.name)
