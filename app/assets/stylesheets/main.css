@@ -318,7 +318,13 @@ h2 {
 }
 
 .cart-buttons {
-  padding-top: 22px;
+  padding-top: 10px;
+}
+
+.cart-buttons input[type="submit"] {
+  margin: 0;
+  padding: 9px;
+  width: 100%;
 }
 
 .cart-item form {
@@ -440,5 +446,5 @@ h2 {
 }
 
 .info {
-  background-color: rgba(156,231,172, 0.6); 
+  background-color: rgba(156,231,172, 0.6);
 }
