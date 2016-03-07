@@ -22,6 +22,10 @@
 }
 /* close commented backslash hack */
 
+.ljust {
+  text-align: left;
+}
+
 /* Base Styles */
 
 body {
@@ -44,6 +48,24 @@ label {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 14px;
+}
+
+table {
+  width: 100%;
+}
+
+thead, tbody, tfoot {
+  text-align: right;
+}
+
+th {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8rem;
+}
+
+table td {
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
 .container input {
@@ -447,4 +469,14 @@ h2 {
 
 .info {
   background-color: rgba(156,231,172, 0.6);
+}
+
+/* Order Section */
+
+.order-section {
+  padding-bottom: 83px;
+}
+
+.order-section input[type='submit'] {
+  width: 100%;
 }
