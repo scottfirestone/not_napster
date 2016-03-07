@@ -22,8 +22,11 @@ class Cart
 
   def cart_albums
     @contents.map do |album_id, quantity|
-      [Album.find(album_id), quantity]
+      AlbumRetriever.new(album_id, quantity)
     end
+    # @contents.map do |album_id, quantity|
+    #   [Album.find(album_id), quantity]
+    # end
   end
 
   def albums
