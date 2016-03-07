@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get "/:genre",    to: "genres#show", as: "genre"
 
   namespace :admin do
-    resource :dashboard, only: [:show]
-    resource :info,      only: [:edit, :update]
+    resource  :dashboard, only: [:show]
+    resource  :info,      only: [:edit, :update]
+    resources :albums,    only: [:new, :index, :create]
   end
 end
