@@ -10,6 +10,11 @@ class Album < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
+  validates :slug, presence: true
+
+  def to_param
+    slug
+  end
 
   def formatted_price
     number_with_precision(price / 100.0, precision: 2)

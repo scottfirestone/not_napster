@@ -396,3 +396,28 @@ h2 {
 .artists-show {
   background-color: #FA7921;
 }
+
+.album img {
+  float: left;
+  width: 25%;
+}
+
+.album h1 {
+  margin: 0;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.album h2 {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.album h3 {
+  font-size: 2rem;
+  margin: 14px 0 0;
+}
+
+.album input[type='submit'] {
+  width: 306px;
+}

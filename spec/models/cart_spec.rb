@@ -26,7 +26,8 @@ RSpec.describe Cart, type: :model do
       description: "Good",
       image_url: "picture of stuff",
       release_year: "1976",
-      price: 1200
+      price: 1200,
+      slug: "the-beatles"
                         )
     cart = Cart.new({ album.id.to_s => 3 })
 

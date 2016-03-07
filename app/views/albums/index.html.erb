@@ -18,8 +18,8 @@
     <h2>All</h2>
     <% @albums.each do |album| %>
       <div class="preview">
-        <%= image_tag album.image_url %>
-        <h3 class="album-title"><%= album.title %></h3>
+        <%= link_to image_tag(album.image_url), album  %>
+        <h3 class="album-title"><%= link_to album.title, album %></h3>
         <h3 class="artist"><%= link_to album.artist.name, album.artist %></h3>
         <h3 class="cost">$<%= album.formatted_price %></h3>
         <%= button_to "Add to cart", carts_path(album_id: album.id)%>
