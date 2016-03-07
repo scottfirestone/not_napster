@@ -22,6 +22,10 @@
 }
 /* close commented backslash hack */
 
+.ljust {
+  text-align: left;
+}
+
 /* Base Styles */
 
 body {
@@ -48,6 +52,24 @@ label {
 
 .user-sidebar small {
   font-size: .8rem;
+}
+
+table {
+  width: 100%;
+}
+
+thead, tbody, tfoot {
+  text-align: right;
+}
+
+th {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8rem;
+}
+
+table td {
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
 .container input {
@@ -214,6 +236,10 @@ h2 {
 .section-container {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.section-container p {
+  font-size: 1.5rem;
 }
 
 .genres-container {
@@ -451,4 +477,18 @@ h2 {
 
 .info {
   background-color: rgba(156,231,172, 0.6);
+}
+
+.order-show {
+  padding-bottom: 364px;
+}
+
+/* Order Section */
+
+.order-section {
+  padding-bottom: 83px;
+}
+
+.order-section input[type='submit'] {
+  width: 100%;
 }
