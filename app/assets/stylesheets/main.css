@@ -234,6 +234,10 @@ h2 {
   padding-bottom: 50px;
 }
 
+.section-container p {
+  font-size: 1.5rem;
+}
+
 .genres-container {
   background-color: #FED766;
 }
@@ -469,6 +473,10 @@ h2 {
 
 .info {
   background-color: rgba(156,231,172, 0.6);
+}
+
+.order-show {
+  padding-bottom: 364px;
 }
 
 /* Order Section */
