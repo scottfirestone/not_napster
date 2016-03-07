@@ -52,6 +52,26 @@ ActiveRecord::Schema.define(version: 20160306224550) do
 
   add_index "genres", ["slug"], name: "index_genres_on_slug", using: :btree
 
+  create_table "order_albums", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "album_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_albums", ["album_id"], name: "index_order_albums_on_album_id", using: :btree
+  add_index "order_albums", ["order_id"], name: "index_order_albums_on_order_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "total"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -63,4 +83,7 @@ ActiveRecord::Schema.define(version: 20160306224550) do
 
   add_foreign_key "albums", "artists"
   add_foreign_key "albums", "genres"
+  add_foreign_key "order_albums", "albums"
+  add_foreign_key "order_albums", "orders"
+  add_foreign_key "orders", "users"
 end

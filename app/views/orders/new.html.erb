@@ -1,0 +1,11 @@
+<h2> Confirm Your Order </h2>
+  <%= "Email: #{current_user.email}" %>
+<br>
+<% @order_albums.each do |order_album| %>
+  Item: <%= order_album.album.title %>
+  Item Price: <%= order_album.album.formatted_price %>
+  Quantity: <%= order_album.quantity %>
+  Subtotal: $<%= order_album.formatted_sub_total %>
+<% end %>
+Total: $<%= @order.formatted_total %>
+<%= button_to "Confirm Order", order_path(:order => {user_id: current_user.id, total: @order.total}) %>
