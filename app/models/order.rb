@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_albums
   has_many :albums, through: :order_albums
+  has_many :orders
 
   before_save :total
 
