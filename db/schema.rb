@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(version: 20160306211401) do
     t.string   "slug"
   end
 
-<<<<<<< HEAD
+  add_index "genres", ["slug"], name: "index_genres_on_slug", using: :btree
+
   create_table "order_albums", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "album_id"
@@ -68,9 +69,6 @@ ActiveRecord::Schema.define(version: 20160306211401) do
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
-=======
-  add_index "genres", ["slug"], name: "index_genres_on_slug", using: :btree
->>>>>>> master
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
