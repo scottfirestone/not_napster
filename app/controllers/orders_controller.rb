@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+
     if @order.save
       session[:order_id] = @order.id
       session[:cart].clear

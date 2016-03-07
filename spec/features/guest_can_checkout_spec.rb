@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "Guest can checkout" do
   scenario "they see the order confirmation page" do
     user   = FactoryGirl.create(:user)
-    FactoryGirl.create(:album)
+    album  = FactoryGirl.create(:album)
 
     visit albums_path
     click_button "Add to cart"
@@ -27,8 +27,8 @@ RSpec.feature "Guest can checkout" do
 
     expect(page).to have_content("Confirm Your Order")
     expect(page).to have_content("Email: #{user.email}")
-    expect(page).to have_content("Title 5")
-    expect(page).to have_content("$1.00")
+    expect(page).to have_content("#{album.title}")
+    expect(page).to have_content("#{album.formatted_price}")
     expect(page).to have_content("1")
     expect(page).to have_content("$1.00")
 

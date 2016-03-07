@@ -6,7 +6,9 @@ class Admin::AlbumsController < Admin::BaseController
   end
 
   def create
-    @album = Album.new(album_params)
+    @artists = Artist.all
+    @genres  = Genre.all
+    @album   = Album.new(album_params)
 
     if @album.save
       flash[:message] = "#{@album.title} has been created"

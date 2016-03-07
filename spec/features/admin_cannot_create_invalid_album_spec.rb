@@ -11,7 +11,9 @@ RSpec.feature "Admin cannot create invalid album" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     album = FactoryGirl.create(:album)
-    genre = Genre.create(name: "Jazz", slug: "jazz")
+    Genre.create(name: "Jazz", slug: "jazz")
+
+    expect(album.id).to eq(2)
 
     visit new_admin_album_path
 
@@ -26,7 +28,8 @@ RSpec.feature "Admin cannot create invalid album" do
 
     click_on "Create Album"
 
-    expect(current_path).to eq(new_admin_album_path)
-    expect(Album.last.id).to eq(1)
+    expect(page).to_not have_content("#{album.title} has been created")
+    expect(page).to have_content("Invalid Entry")
+    expect(album.id).to eq(2)
   end
 end
