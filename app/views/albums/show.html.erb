@@ -1,10 +1,14 @@
-<section class="container section-container">
-  <aside>
-    <h1><%= @album.title %></h1>
-    <h2><%= @album.artist.name %></h2>
-  </aside>
+<section class="container section-container album">
+  <header class="clearfix">
+    <%= image_tag @album.image_url %>
+    <aside>
+      <h1><%= @album.title %></h1>
+      <h2><%= link_to "by #{@album.artist.name}", @album.artist %></h2>
+    </aside>
+  </header>
 
   <footer>
+    <h3>$<%= @album.formatted_price %></h3>
     <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
   </footer>
 </section>
