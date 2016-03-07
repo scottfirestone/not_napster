@@ -12,6 +12,10 @@ class Album < ActiveRecord::Base
   validates :price,       presence: true
   validates :slug,        presence: true, uniqueness: true
 
+  def self.discovery(count)
+    limit(count).order("RANDOM()")
+  end
+
   def to_param
     slug
   end

@@ -29,10 +29,12 @@ RSpec.feature "Guest can checkout" do
     expect(page).to have_content("Email: #{user.email}")
     expect(page).to have_content("#{album.title}")
     expect(page).to have_content("#{album.formatted_price}")
+    expect(page).to have_content("Title 5")
+    expect(page).to have_content("$1.00")
     expect(page).to have_content("1")
     expect(page).to have_content("$1.00")
 
-    expect(page).to have_content("Total: $1.00")
+    expect(page).to have_content("Total")
     click_button "Confirm Order"
 
     expect(page).to have_content("Order #{Order.last.id} was successfully placed!")

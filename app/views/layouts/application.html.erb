@@ -12,9 +12,9 @@
   <%= render "layouts/header" %>
 
   <% flash.each do |type, msg| %>
-    <%= content_tag :div, msg, class: type %>
+    <%= content_tag :div, msg, class: "#{type} flash" %>
   <% end %>
-  
+
   <%= yield %>
 
   <%= render "layouts/footer" %>

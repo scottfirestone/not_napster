@@ -22,6 +22,10 @@
 }
 /* close commented backslash hack */
 
+.ljust {
+  text-align: left;
+}
+
 /* Base Styles */
 
 body {
@@ -44,6 +48,28 @@ label {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 14px;
+}
+
+.user-sidebar small {
+  font-size: .8rem;
+}
+
+table {
+  width: 100%;
+}
+
+thead, tbody, tfoot {
+  text-align: right;
+}
+
+th {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8rem;
+}
+
+table td {
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
 .container input {
@@ -75,6 +101,12 @@ input:-webkit-autofill {
 .container h2 {
   margin: 0 0 50px 0;
   text-decoration: underline;
+}
+
+.row h2 {
+  font-family: 'Julius Sans One', sans-serif;
+  padding-left: 2%;
+  text-align: left;
 }
 
 h2 {
@@ -206,6 +238,10 @@ h2 {
   padding-bottom: 50px;
 }
 
+.section-container p {
+  font-size: 1.5rem;
+}
+
 .genres-container {
   background-color: #FED766;
 }
@@ -312,7 +348,13 @@ h2 {
 }
 
 .cart-buttons {
-  padding-top: 22px;
+  padding-top: 10px;
+}
+
+.cart-buttons input[type="submit"] {
+  margin: 0;
+  padding: 9px;
+  width: 100%;
 }
 
 .cart-item form {
@@ -420,4 +462,33 @@ h2 {
 
 .album input[type='submit'] {
   width: 306px;
+}
+
+/* Flash */
+
+.flash {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.4rem;
+  padding: 20px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.info {
+  background-color: rgba(156,231,172, 0.6);
+}
+
+.order-show {
+  padding-bottom: 364px;
+}
+
+/* Order Section */
+
+.order-section {
+  padding-bottom: 83px;
+}
+
+.order-section input[type='submit'] {
+  width: 100%;
 }
