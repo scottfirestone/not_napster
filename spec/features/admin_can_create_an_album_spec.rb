@@ -35,11 +35,10 @@ RSpec.feature "Admin can create an album" do
 
     album = Album.last
 
-    expect(current_path).to eq(album_path(album))
+    expect(current_path).to eq(admin_albums_path)
     expect(page).to have_content("#{album.title} has been created")
     expect(page).to have_css("img[src*='#{album.image_url}']")
     expect(page).to have_content(album.title)
     expect(page).to have_content(album.artist.name)
-    expect(page).to have_content(album.formatted_price)
   end
 end

@@ -12,7 +12,7 @@ RSpec.feature "Guest can view albums by genre" do
 
     visit genre_path(album_1.genre)
 
-    expect(page).to have_content("Musak")
+    expect(page).to have_content("New Age")
     expect(page).to have_content(album_1.title)
     expect(page).to have_content(album_2.title)
     expect(page).to_not have_content(album_3.title)

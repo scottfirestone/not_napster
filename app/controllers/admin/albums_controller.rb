@@ -16,10 +16,28 @@ class Admin::AlbumsController < Admin::BaseController
 
     if @album.save
       flash[:message] = "#{@album.title} has been created"
-      redirect_to album_path(@album)
+      redirect_to admin_albums_path
     else
       flash.now[:errors] = "Invalid Entry"
       render :new
+    end
+  end
+
+  def edit
+    @album = Album.find_by(slug: params[:id])
+    @artists = Artist.all
+    @genres = Genre.all
+  end
+
+  def update
+    @album = Album.new(album_params)
+
+    if @album.save
+      flash[:message] = "#{@album.title} has been edited"
+      redirect_to admin_albums_path
+    else
+      flash.now[:errors] = "Invalid Entry"
+      render :edit
     end
   end
 
