@@ -7,7 +7,7 @@ class Album < ActiveRecord::Base
   has_many :order_albums
   has_many :orders, through: :order_albums
 
-  validates :title,       presence: true
+  validates :title,       presence: true, uniqueness: { scope: :artist_id }
   validates :description, presence: true
   validates :price,       presence: true
   validates :slug,        presence: true, uniqueness: true
