@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resource  :dashboard, only: [:show]
     resource  :info,      only: [:edit, :update]
-    resources :albums,    only: [:new, :index, :create]
+    resources :albums,    only: [:index, :new, :create, :edit, :update]
   end
 end

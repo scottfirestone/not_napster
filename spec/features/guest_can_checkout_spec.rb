@@ -31,7 +31,6 @@ RSpec.feature "Guest can checkout" do
     expect(page).to have_content("#{album.title}")
     expect(page).to have_content("$1.00")
     expect(page).to have_content("1")
-    expect(page).to have_content("$1.00")
 
     expect(page).to have_content("Total")
     click_button "Confirm Order"
