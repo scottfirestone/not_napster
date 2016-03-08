@@ -1,4 +1,4 @@
-  require "rails_helper"
+require "rails_helper"
 
 RSpec.feature "Admin cannot create invalid album" do
   scenario "existing slug returns to the album create page with an error msg" do

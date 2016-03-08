@@ -31,7 +31,9 @@ class Admin::AlbumsController < Admin::BaseController
 
   def update
     @album = Album.new(album_params)
-
+    @artists = Artist.all
+    @genres = Genre.all
+    
     if @album.save
       flash[:message] = "#{@album.title} has been edited"
       redirect_to admin_albums_path
