@@ -20,7 +20,7 @@ class Album < ActiveRecord::Base
     slug
   end
 
-  def formatted_price
-    number_with_precision(price / 100.0, precision: 2)
+  def formatted_price(quantity = 1)
+    number_with_precision((price * quantity) / 100.0, precision: 2)
   end
 end
