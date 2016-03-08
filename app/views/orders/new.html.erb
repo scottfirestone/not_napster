@@ -30,5 +30,42 @@
     </tfoot>
   </table>
 
-  <%= button_to "Confirm Order", order_path(:order => {user_id: current_user.id, total: @order.total}) %>
+  <%= form_tag order_path, id: 'stripeForm' do %>
+    <%= hidden_field_tag "total", @order.total %>
+    <%= hidden_field_tag "stripeToken" %>
+    <%= hidden_field_tag "stripeEmail" %>
+    <%= hidden_field_tag "stripeAmount" %>
+    <%= button_to "Confirm Order", order_path(:order => {user_id: current_user.id, total: @order.total}), { id: "checkout" } %>
+  <% end %>
+
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script>
+    $(document).on('ready', function() {
+        var total = <%= @order.total %>
+        var handler = StripeCheckout.configure({
+          key: "<%= ENV['PUBLISHABLE_KEY'] %>",
+          image: '',
+          locale: 'auto',
+          token: function(token, args) {
+            $('#stripeToken').val(token.id);
+            $('#stripeEmail').val(token.email);
+            $('#stripeAmount').val(total);
+            $('#stripeForm').submit();
+          }
+        });
+
+        $('#checkout').on('click', function(e) {
+          handler.open({
+            name: 'Not Napster',
+            description: 'Album Purchase',
+            amount: total
+          });
+          e.preventDefault();
+        });
+
+        $(window).on('popstate', function() {
+          handler.close();
+        });
+    });
+  </script>
 </section>
