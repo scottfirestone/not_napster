@@ -7,10 +7,10 @@ class Album < ActiveRecord::Base
   has_many :order_albums
   has_many :orders, through: :order_albums
 
-  validates :title, presence: true
+  validates :title,       presence: true
   validates :description, presence: true
-  validates :price, presence: true
-  validates :slug, presence: true
+  validates :price,       presence: true
+  validates :slug,        presence: true, uniqueness: true
 
   def self.discovery(count)
     limit(count).order("RANDOM()")
