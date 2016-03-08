@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
     if current_user
       @order = Order.new
       @order_albums = CompleteOrder.create_order_albums(session[:cart])
-      @publishable_key = ENV['PUBLISHABLE_KEY']
     else
       redirect_to login_path
     end
@@ -13,24 +12,7 @@ class OrdersController < ApplicationController
     @order = Order.new(user_id: current_user.id, total: params[:total])
 
     if @order.save
-      @amount = params[:total]
-
-      customer = Stripe::Customer.create(
-        email:  params[:stripeEmail],
-        source: params[:stripeToken]
-      )
-
-      charge = Stripe::Charge.create(
-        customer: customer.id,
-        amount: @amount,
-        description: "Rails Stripe customer",
-        currency: "usd"
-      )
-
-    # rescue Stripe::CardError => each
-    #   flash[:error] = e.message
-    #   redirect_to new_charge_path
-
+      process_credit_card unless Rails.env.test?
       session[:order_id] = @order.id
       session[:cart].clear
       redirect_to @order
@@ -48,5 +30,23 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:total, :user_id)
+  end
+
+  def process_credit_card
+    customer = Stripe::Customer.create(
+      email:  params[:stripeEmail],
+      source: params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: params[:total],
+      description: "Rails Stripe customer",
+      currency: "usd"
+    )
+
+  rescue Stripe::CardError => each
+    flash[:error] = each.message
+    redirect_to new_order_path
   end
 end
