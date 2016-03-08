@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to dashboard_path
     else
-      flash[:errors] = "Invalid Account Details"
+      flash.now[:errors] = "Invalid Account Details"
       render :new
     end
   end
