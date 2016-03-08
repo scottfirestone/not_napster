@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   post "/login",    to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/cart",      to: "carts#index", as: "user_cart"
+  get "/cart",      to: "carts#index",  as: "user_cart"
   get "/orders",    to: "orders#index", as: "orders"
-  get "/:genre",    to: "genres#show", as: "genre"
+  get "/:genre",    to: "genres#show",  as: "genre"
 
   namespace :admin do
     resource  :dashboard, only: [:show]
