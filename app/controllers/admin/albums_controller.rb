@@ -1,4 +1,8 @@
 class Admin::AlbumsController < Admin::BaseController
+  def index
+    @albums = Album.all
+  end
+
   def new
     @album   = Album.new
     @artists = Artist.all
