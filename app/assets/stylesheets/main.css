@@ -501,3 +501,52 @@ h2 {
 .order-section input[type='submit'] {
   width: 100%;
 }
+
+/* Featured Album */
+
+.featured-album {
+  background-color: rgb(78, 205, 196);
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.featured-album aside {
+  float: left;
+}
+
+.featured-album img {
+  width: 90%;
+}
+
+.featured-album h1, .featured-album h2, .featured-album h3 {
+  text-align: right;
+}
+
+.featured-album h2:hover, .featured-album h3:hover {
+  text-decoration: underline;
+}
+
+.featured-album h1 {
+  font-size: 3.9rem;
+  margin-bottom: 14px;
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.featured-album h2 {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.featured-album h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.featured-album input[type="submit"] {
+  margin-top: 20px;
+  position: relative;
+  left: 663px;
+  width: 13.4%;
+}

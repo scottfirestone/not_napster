@@ -1,5 +1,12 @@
-<section class="featured-album">
+<section class="featured-album container clearfix">
+  <aside>
+    <%= link_to image_tag(@featured_album.image_url), @featured_album %>
+  </aside>
 
+  <h1>Featured Album</h1>
+  <h2><%= link_to @featured_album.title, @featured_album %></h2>
+  <h3>by <%= link_to @featured_album.artist.name, @featured_album %></h3>
+  <%= button_to "Add to cart", carts_path(album_id: @featured_album.id)%>
 </section>
 
 <div class="container section-container genres-container">
