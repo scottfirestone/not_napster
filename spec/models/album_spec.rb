@@ -7,6 +7,8 @@ RSpec.describe Album, type: :model do
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:price) }
   it { should validate_presence_of(:slug) }
+  it { should validate_uniqueness_of(:slug) }
+  it { should validate_uniqueness_of(:title).scoped_to(:artist_id) }
 
   it "randomly chooses albums for discovery" do
     8.times { FactoryGirl.create(:album) }
@@ -14,5 +16,13 @@ RSpec.describe Album, type: :model do
     random_albums = Album.discovery(4)
 
     expect(random_albums.length).to eq(4)
+  end
+
+  it "formats price based on quantity" do
+    album = FactoryGirl.create(:album)
+
+    price = album.formatted_price(2)
+
+    expect(price).to eq("2.00")
   end
 end
