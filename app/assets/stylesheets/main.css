@@ -550,3 +550,25 @@ h2 {
   left: 663px;
   width: 13.4%;
 }
+
+/* Admin Albums Index */
+
+.admin-albums img {
+  width: 50%;
+}
+
+.admin-albums thead,
+.admin-albums tbody,
+.admin-albums tfoot {
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-albums th,
+.admin-albums td {
+  padding: 4px 10px;
+}
+
+.admin-albums a:hover {
+  text-decoration: underline;
+}
