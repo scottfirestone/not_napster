@@ -7,7 +7,7 @@ class CartsController < ApplicationController
     @cart.add_album(album.id)
     session[:cart] = @cart.contents
     flash[:info] = "You have added #{album.title} to the cart."
-    redirect_to albums_path
+    redirect_to :back
   end
 
   def destroy
