@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "User can view an artist page" do
   scenario "they see all albums associated with artist" do
+    genre = Genre.create(name: "Jazz", slug: "jazz")
     artist = Artist.create(name: "Miles Davis", slug: "miles-davis")
     album_1 = artist.albums.create(
       title: "Bitches Brew",
@@ -10,7 +11,8 @@ RSpec.feature "User can view an artist page" do
       release_year: 1970,
       price: 1500,
       slug: "bitches-brew",
-      expiry_date: Time.now
+      genre_id: genre.id,
+      expiry_date: (Time.now + 6.months)
     )
     album_2 = artist.albums.create(
       title: "Kind of Blue",
@@ -19,7 +21,8 @@ RSpec.feature "User can view an artist page" do
       release_year: 1959,
       price: 1700,
       slug: "kind-of-blue",
-      expiry_date: Time.now
+      genre_id: genre.id,
+      expiry_date: (Time.now + 6.months)
     )
 
     visit albums_path

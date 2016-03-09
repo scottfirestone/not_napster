@@ -20,7 +20,7 @@ class Album < ActiveRecord::Base
   end
 
   def self.unexpired_albums
-    all.reject { |album| album.expired? }
+    all.reject(&:expired?)
   end
 
   def to_param
