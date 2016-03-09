@@ -1,27 +1,3 @@
 <h1>Edit Album</h1>
 
-<%= form_for [:admin, @album] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :slug %>
-  <%= f.text_field :slug %>
-
-  <%= f.collection_select(:artist_id, @artists, :id, :name, { include_blank: 'Select an artist' }, { class: 'artistSelect' })  %>
-
-  <%= f.collection_select(:genre_id, @genres, :id, :name, { include_blank: 'Select a genre' }, { class: 'genreSelect' }) %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-
-  <%= f.label :release_year %>
-  <%= f.text_field :release_year %>
-
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-
-  <%= f.submit "Edit Album" %>
-<% end %>
+<%= render "form", submit_name: "Edit Album" %>
