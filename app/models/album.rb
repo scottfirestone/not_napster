@@ -1,6 +1,9 @@
 class Album < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
 
+  has_many :album_reviews
+  has_many :reviews, through: :album_reviews
+
   belongs_to :artist
   belongs_to :genre
 
