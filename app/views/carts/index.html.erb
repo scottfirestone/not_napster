@@ -3,22 +3,22 @@
 
     <% @cart.cart_albums.each do |cart_album| %>
       <section class="cart-item clearfix">
-          <%= image_tag cart_album.image_url %>
-          <div class="album-info">
-            <h2><%= cart_album.title %></h2>
-            <h3><%= cart_album.description %></h3>
-            <h4>$<%= cart_album.formatted_price %></h4>
-            <h4 class="album-quantity">
-              Quantity: <%= cart_album.quantity %>
-            </h4>
-            <div class="cart-buttons clearfix">
-              <%= button_to "+1", cart_path(id: cart_album.id, operator: "+"), method: :put %>
-              <%= button_to "-1", cart_path(id: cart_album.id, operator: "-"), method: :put %>
+        <%= image_tag cart_album.image_url %>
+        <div class="album-info">
+          <h2><%= cart_album.title %></h2>
+          <h3><%= cart_album.description %></h3>
+          <h4>$<%= cart_album.formatted_price %></h4>
+          <h4 class="album-quantity">
+            Quantity: <%= cart_album.quantity %>
+          </h4>
+          <div class="cart-buttons clearfix">
+            <%= button_to "+1", cart_path(id: cart_album.id, operator: "+"), method: :put %>
+            <%= button_to "-1", cart_path(id: cart_album.id, operator: "-"), method: :put %>
 
-              <%= button_to "Remove", { :controller => :carts,
-                  :action => "destroy", :id => cart_album.id }, :method => :delete %>
-            </div>
+            <%= button_to "Remove", { :controller => :carts,
+                :action => "destroy", :id => cart_album.id }, :method => :delete %>
           </div>
+        </div>
       </section>
     <% end %>
 
@@ -26,9 +26,14 @@
     <h4>Item Count: <%= @cart.quantity %></h4>
     <h4>Total: $<%= @cart.formatted_total_price %></h4>
     <% if @cart.empty? %>
-        <h4>Cart is empty!</h4>
+      <h4>Cart is empty!</h4>
+      <h4>
+        <%= button_to "Checkout", new_order_path(cart: @cart), disabled: true %>
+      </h4>
     <% else %>
-      <h4><%= link_to "Checkout", new_order_path(cart: @cart) %></h4>
+      <h4>
+        <%= button_to "Checkout", new_order_path(cart: @cart), method: :get %>
+      </h4>
     <% end %>
   </section>
 </section>
