@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306224550) do
+ActiveRecord::Schema.define(version: 20160308220833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "album_reviews", force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "review_id"
+  end
+
+  add_index "album_reviews", ["album_id"], name: "index_album_reviews_on_album_id", using: :btree
+  add_index "album_reviews", ["review_id"], name: "index_album_reviews_on_review_id", using: :btree
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
@@ -72,6 +80,12 @@ ActiveRecord::Schema.define(version: 20160306224550) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.string   "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -81,6 +95,8 @@ ActiveRecord::Schema.define(version: 20160306224550) do
     t.integer  "role",            default: 0
   end
 
+  add_foreign_key "album_reviews", "albums"
+  add_foreign_key "album_reviews", "reviews"
   add_foreign_key "albums", "artists"
   add_foreign_key "albums", "genres"
   add_foreign_key "order_albums", "albums"
