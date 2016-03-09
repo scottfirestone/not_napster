@@ -14,5 +14,4 @@ class User < ActiveRecord::Base
       "/dashboard"
     end
   end
-
 end

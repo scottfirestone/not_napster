@@ -14,7 +14,8 @@ class CompleteOrder
 
   def self.finalize_order_albums(cart, order)
     cart.map do |cart_item|
-      OrderAlbum.create(album_id: cart_item[0].to_i, quantity: cart_item[1], order_id: order.id)
+      OrderAlbum.create(album_id: cart_item[0].to_i, quantity: cart_item[1],
+      order_id: order.id)
     end
   end
 end

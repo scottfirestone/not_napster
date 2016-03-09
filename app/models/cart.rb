@@ -22,7 +22,7 @@ class Cart
 
   def cart_albums
     @contents.map do |album_id, quantity|
-      [Album.find(album_id), quantity ]
+      [Album.find(album_id), quantity]
     end
   end
 

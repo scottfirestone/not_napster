@@ -5,9 +5,9 @@ RSpec.feature "Existing user can view past orders" do
     FactoryGirl.create(:album)
 
     user = User.create(username: "salvi6god",
-                        password: "password",
+                       password: "password",
                        email: "email@email.com"
-                       )
+                      )
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -44,6 +44,5 @@ RSpec.feature "Existing user can view past orders" do
     expect(page).to have_content("$#{order.formatted_total}")
 
     expect(page).to have_content(order.time_format)
-
   end
 end
