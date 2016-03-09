@@ -86,6 +86,11 @@ table td {
   width: 63.2%;
 }
 
+.container select {
+  margin-bottom: 14px;
+  width: 25%;
+}
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
 }
@@ -247,7 +252,7 @@ h2 {
 }
 
 .user-form-container {
-  height: 580px;
+  min-height: 580px;
 }
 
 .genres {
