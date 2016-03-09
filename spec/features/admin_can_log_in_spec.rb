@@ -16,6 +16,6 @@ RSpec.feature "Admin can log in" do
     click_button "Login"
 
     expect(current_path).to eq(admin_dashboard_path)
-    expect(page).to have_content("Admin Dashboard")
+    expect(page).to have_content("Admin Details")
   end
 end
