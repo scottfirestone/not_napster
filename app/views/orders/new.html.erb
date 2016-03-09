@@ -41,7 +41,7 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <script>
     $(document).on('ready', function() {
-        var total = <%= @order.total %>
+        var total = <%= @order.total %>;
         var handler = StripeCheckout.configure({
           key: "<%= ENV['PUBLISHABLE_KEY'] %>",
           image: '',
