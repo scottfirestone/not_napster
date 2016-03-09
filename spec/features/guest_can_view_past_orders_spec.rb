@@ -31,6 +31,7 @@ RSpec.feature "Existing user can view past orders" do
     click_button "Confirm Order"
 
     visit dashboard_path
+
     click_link "Past Orders"
 
     expect(page).to have_content(user.orders.first.id)

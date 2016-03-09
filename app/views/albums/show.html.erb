@@ -10,10 +10,14 @@
 
   <footer>
     <h3>$<%= @album.formatted_price %></h3>
-    <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
-    <h2><%="Album Comments"  %></h2>
+    <% if @album.expired? %>
+      <p>Album is no longer available.</p>
+    <% else %>
+      <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
+    <% end %>
+    <h2><%="Album Comments" %></h2>
     <% @album.reviews.each do |review| %>
-      <h3><%= "* #{review.comment}" %></h3>
+      <h3>* <%= review.comment %></h3>
     <% end %>
   </footer>
 </section>
