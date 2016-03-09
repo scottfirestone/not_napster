@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @genres = Genre.all
-    @albums = Album.all
+    @albums = Album.unexpired_albums
     @featured_album = Album.take
   end
 

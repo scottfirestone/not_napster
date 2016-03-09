@@ -9,7 +9,8 @@ RSpec.feature "User can view an artist page" do
       image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bitches_brew.jpg/220px-Bitches_brew.jpg",
       release_year: 1970,
       price: 1500,
-      slug: "bitches-brew"
+      slug: "bitches-brew",
+      expiry_date: Time.now
     )
     album_2 = artist.albums.create(
       title: "Kind of Blue",
@@ -17,7 +18,8 @@ RSpec.feature "User can view an artist page" do
       image_url: "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg",
       release_year: 1959,
       price: 1700,
-      slug: "kind-of-blue"
+      slug: "kind-of-blue",
+      expiry_date: Time.now
     )
 
     visit albums_path
