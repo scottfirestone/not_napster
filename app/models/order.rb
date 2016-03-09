@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
   end
 
   def get_total
-    total || CompleteOrder.calculate_total
+    total || OrderProcessor.calculate_total
   end
 
   def time_format
