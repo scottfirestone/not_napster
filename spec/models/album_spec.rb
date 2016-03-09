@@ -25,4 +25,14 @@ RSpec.describe Album, type: :model do
 
     expect(price).to eq("2.00")
   end
+
+  it "knows if its expired based on expiry date" do
+    album = FactoryGirl.create(:album)
+
+    expect(album.expired?).to eq(false)
+
+    album.update(expiry_date: "#{Time.now - 1.month}")
+
+    expect(album.expired?).to eq(true)
+  end
 end

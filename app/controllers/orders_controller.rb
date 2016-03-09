@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(session[:order_id])
+    @order = Order.find(params[:id])
   end
 
   private

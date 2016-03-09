@@ -30,12 +30,13 @@
     </tfoot>
   </table>
 
-  <%= form_tag order_path, id: 'stripeForm' do %>
+  <%= form_tag @order, id: 'stripeForm' do %>
     <%= hidden_field_tag "total", @order.get_total %>
     <%= hidden_field_tag "stripeToken" %>
     <%= hidden_field_tag "stripeEmail" %>
     <%= hidden_field_tag "stripeAmount" %>
-    <%= button_to "Confirm Order", order_path(:order => {user_id: current_user.id, total: @order.get_total}), { id: "checkout" } %>
+    <%#= button_to "Confirm Order", order_path(@order, :order => {user_id: current_user.id, total: @order.get_total}), { id: "checkout" } %>
+    <%= button_to "Confirm Order", @order, { id: "checkout" } %>
   <% end %>
 
   <script src="https://checkout.stripe.com/checkout.js"></script>

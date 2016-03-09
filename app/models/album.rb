@@ -23,4 +23,8 @@ class Album < ActiveRecord::Base
   def formatted_price(quantity = 1)
     number_with_precision((price * quantity) / 100.0, precision: 2)
   end
+
+  def expired?
+    Time.now > expiry_date
+  end
 end

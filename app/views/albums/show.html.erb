@@ -9,6 +9,10 @@
 
   <footer>
     <h3>$<%= @album.formatted_price %></h3>
-    <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
+    <% if @album.expired? %>
+      <p>Album is no longer available.</p>
+    <% else %>
+      <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
+    <% end %>
   </footer>
 </section>
