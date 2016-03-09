@@ -5,7 +5,9 @@ RSpec.feature "Guest adds items to cart" do
     album = FactoryGirl.create(:album)
 
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_link "Cart"
 
     expect(current_path).to eq(user_cart_path)
@@ -18,7 +20,9 @@ RSpec.feature "Guest adds items to cart" do
     end
 
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_on "Cart"
 
     within(".cart-total") do

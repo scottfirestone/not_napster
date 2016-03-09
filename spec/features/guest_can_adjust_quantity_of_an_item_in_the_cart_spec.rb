@@ -4,7 +4,9 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
   scenario "they can adjust the quantity by adding" do
     album = FactoryGirl.create(:album)
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_link "Cart"
 
     expect(page).to have_css("img[src*='#{album.image_url}']")
@@ -29,7 +31,9 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
   scenario "they can adjust the quantity by subtracting" do
     album = FactoryGirl.create(:album)
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_link "Cart"
 
     expect(page).to have_css("img[src*='#{album.image_url}']")
@@ -57,7 +61,9 @@ RSpec.feature "Guest can adjust quantity of an item in the cart" do
   scenario "when quantity equals zero album disappears" do
     album = FactoryGirl.create(:album)
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_link "Cart"
 
     expect(page).to have_css("img[src*='#{album.image_url}']")

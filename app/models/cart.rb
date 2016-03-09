@@ -22,27 +22,27 @@ class Cart
 
   def cart_albums
     @contents.map do |album_id, quantity|
-      [Album.find(album_id), quantity]
+      CartAlbum.new(album_id, quantity)
     end
   end
 
-  def albums
-    @contents.map do |album_id, _quantity|
-      Album.find(album_id)
-    end
-  end
+  # def albums
+  #   @contents.map do |album_id, _quantity|
+  #     Album.find(album_id)
+  #   end
+  # end
 
-  def album_quantity(album_id)
-    @contents[album_id.to_s]
-  end
+  # def album_quantity(album_id)
+  #   @contents[album_id.to_s]
+  # end
 
-  def cart_album_price(cart_album)
-    cart_album[0].price * cart_album[1]
-  end
+  # def cart_album_price(cart_album)
+  #   cart_album[0].price * cart_album[1]
+  # end
 
   def total_price
     cart_albums.reduce(0) do |sum, cart_album|
-      sum + cart_album_price(cart_album)
+      sum + cart_album.subtotal
     end
   end
 
@@ -64,6 +64,7 @@ class Cart
     elsif operator == "-"
       minus_one(album_id)
     end
+    remove_cart_album(album_id) if contents[album_id] == 0
   end
 
   def navigation_quantity

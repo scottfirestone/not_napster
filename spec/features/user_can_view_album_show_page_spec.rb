@@ -5,7 +5,9 @@ RSpec.feature "User can view album show page" do
     album = FactoryGirl.create(:album)
 
     visit albums_path
-    click_link album.title
+    within(".preview") do
+      click_link album.title
+    end
 
     expect(current_path).to eq(album_path(album))
     expect(page).to have_content(album.title)
