@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :review do
+    album nil
+    comment "MyString"
+  end
   factory :user do
     sequence(:username) { |n| "User #{n}" }
     sequence(:email) { |n| "example#{n}@example.com" }
