@@ -1,14 +1,16 @@
-<h1>Edit Info</h1>
+<section class="container user-form-container">
+  <h1>Edit Info</h1>
 
-<%= form_for @user, url: admin_info_path do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= form_for @user, url: admin_info_path do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.submit "Update Account" %>
-<% end %>
+    <%= f.submit "Update Account" %>
+  <% end %>
+</section>
