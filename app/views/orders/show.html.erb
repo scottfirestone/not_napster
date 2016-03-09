@@ -11,12 +11,12 @@
       </tr>
     </thead>
     <tbody>
-      <% @order.order_albums.each do |order_detail| %>
+      <% @order.order_albums.each do |order_album| %>
         <tr>
-          <td class="ljust"><%= link_to order_detail.album.title, album_path(order_detail.album) %></td>
-          <td>$<%= order_detail.album.formatted_price %></td>
-          <td><%= order_detail.quantity %></td>
-          <td>$<%= order_detail.formatted_sub_total %></td>
+          <td class="ljust"><%= link_to order_album.album.title, album_path(order_album.album) %></td>
+          <td>$<%= order_album.album.formatted_price %></td>
+          <td><%= order_album.quantity %></td>
+          <td>$<%= order_album.formatted_sub_total %></td>
         </tr>
       <% end %>
     </tbody>

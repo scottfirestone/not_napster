@@ -20,10 +20,6 @@ class OrderAlbum < ActiveRecord::Base
     album.price
   end
 
-  def formatted_price
-    number_with_precision(price / 100.0, precision: 2)
-  end
-
   def time_format
     created_at.strftime("%B %d, %Y")
   end
