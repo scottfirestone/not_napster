@@ -1,4 +1,4 @@
 <h1>Past Orders</h1>
 <% current_user.orders.each do |order| %>
-  Order Number: <%= order.id %>
+  <%= link_to "Order Number: #{order.id}", order %>
 <% end %>

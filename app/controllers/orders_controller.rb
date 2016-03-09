@@ -13,7 +13,9 @@ class OrdersController < ApplicationController
 
     if @order.save
       session[:order_id] = @order.id
+      CompleteOrder.finalize_order_albums(session[:cart], @order)
       session[:cart].clear
+      flash[:message] = "Order #{@order.id} was successfully placed!"
       redirect_to @order
     else
       flash.now[:notice] = "Sorry, something went wrong with your order!"

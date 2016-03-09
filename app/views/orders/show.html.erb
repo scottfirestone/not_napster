@@ -1,7 +1,32 @@
-<section class="container section-container order-show">
-  <h1>Order Complete</h1>
-
-  <p>
-    Order <%= @order.id %> was successfully placed!
-  </p>
+<section class="container section-container order-section">
+  <h1>Order <%= @order.id %> Details</h1>
+  <h2>Order Placed: <%= @order.time_format %> </h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="ljust">Album(s)</th>
+        <th>Price</th>
+        <th>qty</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_albums.each do |order_detail| %>
+        <tr>
+          <td class="ljust"><%= link_to order_detail.album.title, album_path(order_detail.album) %></td>
+          <td>$<%= order_detail.album.formatted_price %></td>
+          <td><%= order_detail.quantity %></td>
+          <td>$<%= order_detail.formatted_sub_total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr colspan="4">
+        <th colspan="4">Total</th>
+      </tr>
+      <tr>
+        <td colspan="4">$<%= @order.formatted_total %></td>
+      </tr>
+    </tfoot>
+  </table>
 </section>
