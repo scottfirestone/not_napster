@@ -6,7 +6,9 @@ RSpec.feature "Guest can checkout" do
     album  = FactoryGirl.create(:album)
 
     visit albums_path
-    click_button "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
 
     visit carts_path
 
@@ -46,7 +48,9 @@ RSpec.feature "Guest can checkout" do
 
     visit albums_path
 
-    click_button "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
 
     expect(page).to have_content("Cart ( 1 )")
 

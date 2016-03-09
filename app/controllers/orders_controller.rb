@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def new
     if current_user
       @order = Order.new
-      @order_albums = CompleteOrder.create_order_albums(session[:cart])
+      @order_albums = OrderProcessor.prepare_order_albums(session[:cart])
     else
       redirect_to login_path
     end
@@ -13,9 +13,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       process_credit_card unless Rails.env.test?
-      session[:order_id] = @order.id
-      CompleteOrder.finalize_order_albums(session[:cart], @order)
-      session[:cart].clear
+      OrderProcessor.finalize_order(session, @order)
       flash[:message] = "Order #{@order.id} was successfully placed!"
       redirect_to @order
     else
@@ -25,7 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(session[:order_id])
+    @order = Order.find(params[:id])
   end
 
   private

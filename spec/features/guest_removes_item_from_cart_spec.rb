@@ -5,7 +5,9 @@ RSpec.feature "Guest removes an item from cart" do
     album = FactoryGirl.create(:album)
 
     visit albums_path
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+    end
     click_link "Cart"
 
     expect(page).to have_css("img[src*='#{album.image_url}']")

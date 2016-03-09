@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root to: "static_pages#landing"
-
-  resources :albums,  only: [:index, :show]
+  resources :albums,  only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
   resources :artists, only: [:index, :show], param: :artist_name
 
   resources :users, only: [:new, :create]
   resources :carts, only: [:index, :create, :destroy, :update]
-  resource :order, only: [:new, :show, :create]
+  resources :orders, only: [:new, :show, :create, :index]
 
   get "/dashboard", to: "users#show"
 
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/cart",      to: "carts#index",  as: "user_cart"
-  get "/orders",    to: "orders#index", as: "orders"
   get "/:genre",    to: "genres#show",  as: "genre"
 
   namespace :admin do

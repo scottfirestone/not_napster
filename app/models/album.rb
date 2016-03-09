@@ -1,6 +1,9 @@
 class Album < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
 
+  has_many :album_reviews
+  has_many :reviews, through: :album_reviews
+
   belongs_to :artist
   belongs_to :genre
 
@@ -20,7 +23,11 @@ class Album < ActiveRecord::Base
     slug
   end
 
-  def formatted_price(quantity = 1)
-    number_with_precision((price * quantity) / 100.0, precision: 2)
+  def formatted_price
+    number_with_precision(price / 100.0, precision: 2)
+  end
+
+  def expired?
+    Time.now > expiry_date
   end
 end

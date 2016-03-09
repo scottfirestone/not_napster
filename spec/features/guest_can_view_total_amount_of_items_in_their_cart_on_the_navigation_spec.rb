@@ -6,9 +6,11 @@ RSpec.feature "Guest sees total amount of items in their cart on the navbar" do
 
     visit albums_path
 
-    click_on "Add to cart"
-    click_on "Add to cart"
-    click_on "Add to cart"
+    within(".preview") do
+      click_on "Add to cart"
+      click_on "Add to cart"
+      click_on "Add to cart"
+    end
 
     within(".site-nav") do
       expect(page).to have_content "3"
