@@ -475,8 +475,12 @@ h2 {
   width: 100%;
 }
 
+.errors {
+  background-color: rgba(227, 0, 37, 0.6);
+}
+
 .info {
-  background-color: rgba(156,231,172, 0.6);
+  background-color: rgba(156, 231, 172, 0.5);
 }
 
 .order-show {
