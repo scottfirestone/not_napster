@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160309022345) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160309022345) do
     t.integer  "genre_id"
     t.integer  "artist_id"
     t.string   "slug"
-    t.datetime "expiry_date",  default: '2016-09-09 01:55:34'
+    t.datetime "expiry_date",  default: '2016-09-09 20:39:36'
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
