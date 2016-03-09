@@ -38,7 +38,7 @@ RSpec.feature "Existing user can view past orders" do
       expect(page).to have_link(order_album.title.to_s, album_path(order_album.album))
       expect(page).to have_content("$#{order_album.formatted_sub_total}")
       expect(page).to have_content(order_album.quantity)
-      expect(page).to have_content("$#{order_album.formatted_price}")
+      expect(page).to have_content("$#{order_album.album.formatted_price}")
     end
 
     expect(page).to have_content("$#{order.formatted_total}")
