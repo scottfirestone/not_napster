@@ -17,4 +17,12 @@ RSpec.describe Album, type: :model do
 
     expect(random_albums.length).to eq(4)
   end
+
+  it "formats price based on quantity" do
+    album = FactoryGirl.create(:album)
+
+    price = album.formatted_price(2)
+
+    expect(price).to eq("2.00")
+  end
 end

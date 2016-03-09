@@ -8,7 +8,7 @@
           <div class="album-info">
             <h2><%= album.title %></h2>
             <h3><%= album.description %></h3>
-            <h4>$<%= album.formatted_price %></h4>
+            <h4>$<%= album.formatted_price(@cart.album_quantity(album.id)) %></h4>
             <h4 class="album-quantity">
               Quantity: <%= @cart.album_quantity(album.id) %>
             </h4>
