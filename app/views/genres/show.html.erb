@@ -2,7 +2,7 @@
   <h2><%= @genre.name %></h2>
 
   <section class="clearfix">
-    <% @genre.albums.each do |album| %>
+    <% @albums.each do |album| %>
       <div class="preview">
         <%= link_to(image_tag(album.image_url), album) %>
         <h3 class="album-title"><%= link_to(album.title, album) %></h3>

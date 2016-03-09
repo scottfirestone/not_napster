@@ -20,4 +20,25 @@ RSpec.feature "User cannot see expired albums on indicies" do
       expect(page).to_not have_content("Add to cart")
     end
   end
+
+  scenario "the expired album does not appear on genre albums index" do
+    album = FactoryGirl.create(:album)
+    genre = FactoryGirl.create(:genre)
+    album.update(expiry_date: (Time.now - 7.months), genre_id: genre.id)
+
+    user = User.create(username: "scottrick",
+                       password: "password",
+                       email: "email@email.com"
+                      )
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit genre_path(album.genre)
+
+    within(".section-container") do
+      expect(page).to_not have_content(album.title)
+      expect(page).to_not have_content(album.artist.name)
+      expect(page).to_not have_content("Add to cart")
+    end
+  end
 end
