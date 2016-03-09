@@ -1,27 +1,31 @@
-<h1>New Album</h1>
+<section class="container user-form-container">
+  <h1>New Album</h1>
 
-<%= form_for [:admin, @album] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= form_for [:admin, @album] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <%= f.label :slug %>
-  <%= f.text_field :slug %>
+    <%= f.label :slug %>
+    <%= f.text_field :slug %>
+    <br>
+    <%= f.label :artist_id %>
+    <%= f.collection_select(:artist_id, @artists, :id, :name, { include_blank: 'Select an artist' }, { class: 'artistSelect' })  %>
+    <br>
+    <%= f.label :genre_id %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name, { include_blank: 'Select a genre' }, { class: 'genreSelect' }) %>
 
-  <%= f.collection_select(:artist_id, @artists, :id, :name, { include_blank: 'Select an artist' }, { class: 'artistSelect' })  %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-  <%= f.collection_select(:genre_id, @genres, :id, :name, { include_blank: 'Select a genre' }, { class: 'genreSelect' }) %>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :release_year %>
+    <%= f.text_field :release_year %>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
 
-  <%= f.label :release_year %>
-  <%= f.text_field :release_year %>
-
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-
-  <%= f.submit "Create Album" %>
-<% end %>
+    <%= f.submit "Create Album" %>
+  <% end %>
+</section>
