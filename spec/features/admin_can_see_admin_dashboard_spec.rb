@@ -12,6 +12,6 @@ RSpec.feature "Admin can see admin dashboard" do
 
     visit admin_dashboard_path
 
-    expect(page).to have_content("Admin Dashboard")
+    expect(page).to have_content("Admin Details")
   end
 end
