@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       log_in(@user)
       redirect_to @user.authorize_session
     else
-      flash[:errors] = "Invalid Credentials"
+      flash.now[:errors] = "Invalid Credentials"
       render :new
     end
   end
