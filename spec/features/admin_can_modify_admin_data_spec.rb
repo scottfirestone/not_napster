@@ -18,7 +18,6 @@ RSpec.feature "Admin can modify admin info" do
     expect(page).to have_selector("input[value='#{admin.email}']")
 
     fill_in "Username", with: "New Username"
-    fill_in "Password", with: "new_password"
     fill_in "Email",    with: "new_email@example.com"
 
     click_on "Update Account"
