@@ -30,9 +30,9 @@ class Admin::AlbumsController < Admin::BaseController
   end
 
   def update
-    @album = Album.new(album_params)
+    @album = Album.find_by(slug: params[:id])
 
-    if @album.save
+    if @album.update(album_params)
       flash[:message] = "#{@album.title} has been edited"
       redirect_to admin_albums_path
     else

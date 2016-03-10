@@ -16,7 +16,7 @@ RSpec.feature "Admin cannot edit album using invalid attributes" do
 
     visit edit_admin_album_path(album)
 
-    fill_in "Title", with: "New Title"
+    fill_in "Title", with: ""
     fill_in "Slug",  with: album.slug
     find(".artistSelect").find(:xpath, '//option[contains(text(), "Artist")]').select_option
     find(".genreSelect").find(:xpath, '//option[contains(text(), "Jazz")]').select_option
@@ -29,7 +29,6 @@ RSpec.feature "Admin cannot edit album using invalid attributes" do
 
     last_album = Album.last
 
-    expect(last_album.title).to_not eq("New Title")
     expect(page).to have_content("Invalid Entry")
   end
 end

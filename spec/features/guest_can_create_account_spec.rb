@@ -26,8 +26,6 @@ RSpec.feature "Guest can create an account" do
       expect(page).to have_link("Account Details")
       expect(page).to have_link("Update Account")
       expect(page).to have_link("Past Orders")
-      expect(page).to have_link("My Albums")
-      expect(page).to have_link("My Reviews")
     end
 
     within(".user") do
