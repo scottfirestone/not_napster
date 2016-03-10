@@ -605,3 +605,9 @@ h2 {
 .admin-albums a:hover {
   text-decoration: underline;
 }
+
+#album_expiry_date_1i,
+#album_expiry_date_2i,
+#album_expiry_date_3i {
+  width: 21%;
+}
