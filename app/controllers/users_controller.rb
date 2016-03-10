@@ -28,10 +28,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      flash[:notice] = "Account updated!"
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:info] = "Account updated!"
       redirect_to dashboard_path
     else
+      flash.now[:errors] = "Invalid entry"
       render :edit
     end
   end
