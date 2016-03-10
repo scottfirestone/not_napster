@@ -113,6 +113,19 @@ input:-webkit-autofill {
   text-decoration: underline;
 }
 
+.container ul {
+  font-size: 1.5rem;
+  padding-left: 24px;
+}
+
+.container li {
+  margin-bottom: 10px;
+}
+
+.container li a:hover {
+  text-decoration: underline;
+}
+
 .row h2 {
   font-family: 'Julius Sans One', sans-serif;
   padding-left: 2%;
@@ -532,8 +545,21 @@ h2 {
   padding-bottom: 83px;
 }
 
+.order-section h1 {
+  text-align: center;
+}
+
+.order-section h2 {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
 .order-section input[type='submit'] {
   width: 100%;
+}
+
+.orders-section {
+  min-height: 534px;
 }
 
 /* Featured Album */

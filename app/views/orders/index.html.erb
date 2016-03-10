@@ -1,4 +1,8 @@
-<h1>Past Orders</h1>
-<% current_user.orders.each do |order| %>
-  <%= link_to "Order Number: #{order.id}", order %>
-<% end %>
+<section class="container orders-section">
+  <h1>Past Orders</h1>
+  <ul>
+    <% current_user.orders.each do |order| %>
+      <li><%= link_to "Order Number: #{order.id}", order %></li>
+    <% end %>
+  </ul>
+</section>
