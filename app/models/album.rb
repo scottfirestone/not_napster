@@ -14,6 +14,7 @@ class Album < ActiveRecord::Base
   validates :description, presence: true
   validates :price,       presence: true
   validates :slug,        presence: true, uniqueness: true
+  validates :expiry_date, presence: true
 
   def self.discovery(count)
     limit(count).order("RANDOM()")

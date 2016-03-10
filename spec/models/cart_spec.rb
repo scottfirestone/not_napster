@@ -27,8 +27,10 @@ RSpec.describe Cart, type: :model do
       image_url: "picture of stuff",
       release_year: "1976",
       price: 1200,
-      slug: "the-beatles"
-                        )
+      slug: "the-beatles",
+      expiry_date: (Time.now + 6.months)
+    )
+
     cart = Cart.new({ album.id.to_s => 3 })
 
     expect(cart.formatted_total_price).to eq("36.00")

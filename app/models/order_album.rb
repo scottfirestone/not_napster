@@ -4,6 +4,8 @@ class OrderAlbum < ActiveRecord::Base
   belongs_to :order
   belongs_to :album
 
+  validates_presence_of :quantity
+
   def sub_total
     price * quantity
   end
