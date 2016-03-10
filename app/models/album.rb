@@ -34,4 +34,12 @@ class Album < ActiveRecord::Base
   def expired?
     Time.now > expiry_date
   end
+
+  def status
+    if expired?
+      "Expired"
+    else
+      "Valid"
+    end
+  end
 end

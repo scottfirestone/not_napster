@@ -81,7 +81,7 @@ RSpec.feature "Guest can create an account" do
       fill_in "Password", with: "password"
       click_button "Create Account"
 
-      visit user_cart_path
+      visit cart_path
 
       expect(page).to have_css("img[src*='#{album.image_url}']")
       expect(page).to have_content album.title
