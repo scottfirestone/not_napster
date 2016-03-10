@@ -19,6 +19,10 @@ class Album < ActiveRecord::Base
     limit(count).order("RANDOM()")
   end
 
+  def self.unexpired_albums
+    all.reject(&:expired?)
+  end
+
   def to_param
     slug
   end

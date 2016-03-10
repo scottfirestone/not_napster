@@ -5,7 +5,7 @@
 <div class="container section-container">
   <section class="clearfix">
     <h2>Albums</h2>
-    <% @artist.albums.each do |album| %>
+    <% @albums.each do |album| %>
       <div class="preview">
         <%= link_to image_tag(album.image_url), album %>
         <h3 class="album-title"> <%= link_to album.title, album %> </h3>

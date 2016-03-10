@@ -5,5 +5,6 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find_by(slug: params[:artist_name])
+    @albums = @artist.albums.unexpired_albums
   end
 end
