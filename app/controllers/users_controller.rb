@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       flash[:info] = "Account updated!"
       redirect_to dashboard_path
     else
+      @user = User.find(params[:id])
       flash.now[:errors] = "Invalid entry"
       render :edit
     end
