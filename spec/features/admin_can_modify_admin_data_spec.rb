@@ -42,7 +42,6 @@ RSpec.feature "Admin can modify admin info" do
       visit admin_dashboard_path
       click_on "Edit Account"
       fill_in "Username", with: ""
-      fill_in "Password", with: "new_password"
       fill_in "Email",    with: "new_email@example.com"
       click_on "Update Account"
 
