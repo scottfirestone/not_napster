@@ -26,6 +26,16 @@
   text-align: left;
 }
 
+/* Kendricks Face */
+
+.kendricks-face {
+  background: url("http://culturedvultures.com/wp-content/uploads/2015/03/1381706564_e7f7b182509707a8febb6ff0cfeb50b2.jpg") no-repeat;
+}
+
+.kendricks-face h1 {
+  text-align: right;
+}
+
 /* Base Styles */
 
 body {
@@ -251,7 +261,7 @@ h2 {
 /* Landing Page */
 
 .landing-callout {
-  background-color: #eaeaca;
+  background-color: #fff;
 }
 
 /* Album Index */
