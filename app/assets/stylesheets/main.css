@@ -260,6 +260,18 @@ h2 {
   min-height: 580px;
 }
 
+.user-form-container small {
+  font-size: 1.2rem;
+}
+
+.user-form-container a {
+  color: rgb(0, 159, 183);
+}
+
+.user-form-container a:hover {
+  text-decoration: underline;
+}
+
 .genres {
   padding: 0;
 }
