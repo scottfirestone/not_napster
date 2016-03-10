@@ -18,7 +18,6 @@ RSpec.feature "User can edit their account info" do
     fill_in "Username", with: "salviog"
     fill_in "Email", with: "alex@email.com"
 
-
     click_link_or_button "Update Account"
 
     expect(current_path).to eq(dashboard_path)
