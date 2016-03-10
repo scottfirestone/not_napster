@@ -1,11 +1,13 @@
-<h1>Update Account</h1>
+<section class="container user-form-container">
+  <h1>Update Account</h1>
 
-<%= form_for @user, url: user_path(@user) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, placeholder: "#{@user.username}" %>
+  <%= form_for @user, url: user_path(@user) do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder: "#{@user.username}" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, placeholder: "#{@user.email}" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: "#{@user.email}" %>
 
-  <%= f.submit "Update Account" %>
-<% end %>
+    <%= f.submit "Update Account" %>
+  <% end %>
+</section>
