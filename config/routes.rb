@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   end
   resources :artists, only: [:index, :show], param: :artist_name
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :update]
   resource :cart
+
   resources :orders, only: [:new, :show, :create, :index]
 
-  get "/dashboard", to: "users#show"
+  get "/dashboard",      to: "users#show"
+  get "/dashboard/edit", to: "users#edit",  as: "user_edit"
 
   get "/login",     to: "sessions#new"
   post "/login",    to: "sessions#create"
