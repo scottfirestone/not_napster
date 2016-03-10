@@ -24,10 +24,6 @@
         </tr>
       <% end %>
     </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="4"><%= link_to "New Album", new_admin_album_path %></td>
-      </tr>
-    </tfoot>
   </table>
+  <%= button_to "New Album", new_admin_album_path, method: :get %>
 </section>
