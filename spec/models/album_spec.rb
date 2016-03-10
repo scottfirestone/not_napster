@@ -27,4 +27,14 @@ RSpec.describe Album, type: :model do
 
     expect(album.expired?).to eq(true)
   end
+
+  it "knows its status based on expiration date" do
+    album = FactoryGirl.create(:album)
+
+    expect(album.status).to eq("Valid")
+
+    album.update(expiry_date: "#{Time.now - 1.month}")
+
+    expect(album.status).to eq("Expired")
+  end
 end
