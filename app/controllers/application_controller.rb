@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_out
-    session.delete(:user_id)
+    session.destroy
   end
 
   def current_admin?
