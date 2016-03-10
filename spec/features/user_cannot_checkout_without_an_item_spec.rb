@@ -9,7 +9,7 @@ RSpec.feature "User cannot checkout without an item" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit carts_path
+    visit cart_path
 
     expect(page).to have_no_content("Checkout")
     expect(page).to have_content("Cart is empty!")

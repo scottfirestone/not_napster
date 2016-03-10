@@ -17,7 +17,7 @@ RSpec.feature "Existing user can view past orders" do
       click_on "Add to cart"
     end
 
-    visit carts_path
+    visit cart_path
     click_button "Checkout"
     click_button "Confirm Order"
 
@@ -26,7 +26,7 @@ RSpec.feature "Existing user can view past orders" do
       click_on "Add to cart"
     end
 
-    visit carts_path
+    visit cart_path
     click_button "Checkout"
     click_button "Confirm Order"
 
