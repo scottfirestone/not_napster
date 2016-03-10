@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
       flash[:info] = "Order #{@order.id} was successfully placed!"
       redirect_to @order
     else
+      @order_albums = OrderProcessor.prepare_order_albums(session[:cart])
       flash.now[:notice] = "Sorry, something went wrong with your order!"
       render :new
     end

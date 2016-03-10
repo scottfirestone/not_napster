@@ -62,4 +62,32 @@ RSpec.feature "Guest can checkout" do
 
     expect(page).to_not have_content("Cart ( 1 )")
   end
+
+  context "when their is an order error" do
+    scenario "they see an error message" do
+      user   = FactoryGirl.create(:user)
+      album  = FactoryGirl.create(:album)
+      invalid_user = User.new()
+
+      visit albums_path
+      within(".preview") do
+        click_on "Add to cart"
+      end
+      visit cart_path
+      click_button "Checkout"
+      fill_in "Username", with: user.username
+      fill_in "Password", with: user.password
+      click_button "Login"
+      visit cart_path
+      click_button "Checkout"
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(invalid_user)
+
+      click_button "Confirm Order"
+
+      within(".notice") do
+        expect(page).to have_content("Sorry, something went wrong with your order!")
+      end
+    end
+  end
 end
