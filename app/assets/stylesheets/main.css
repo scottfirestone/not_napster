@@ -610,8 +610,8 @@ h2 {
 
 .featured-album input[type="submit"] {
   margin-top: 20px;
-  position: relative;
-  left: 663px;
+  position: absolute;
+  right: 109px;
   width: 13.4%;
 }
 
