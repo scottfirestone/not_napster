@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     if @order.save
       process_credit_card unless Rails.env.test?
       OrderProcessor.finalize_order(session, @order)
-      flash[:message] = "Order #{@order.id} was successfully placed!"
+      flash[:info] = "Order #{@order.id} was successfully placed!"
       redirect_to @order
     else
       flash.now[:notice] = "Sorry, something went wrong with your order!"
