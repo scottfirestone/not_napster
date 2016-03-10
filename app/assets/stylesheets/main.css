@@ -528,6 +528,7 @@ h2 {
 /* Order Section */
 
 .order-section {
+  min-height: 478px;
   padding-bottom: 83px;
 }
 
