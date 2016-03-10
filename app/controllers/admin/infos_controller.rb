@@ -6,10 +6,10 @@ class Admin::InfosController < Admin::BaseController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:message] = "Your info has been updated!"
+      flash[:info] = "Your info has been updated!"
       redirect_to admin_dashboard_path
     else
-      flash.now[:error] = "Invalid Info"
+      flash.now[:errors] = "Invalid Info"
       render :edit
     end
   end
