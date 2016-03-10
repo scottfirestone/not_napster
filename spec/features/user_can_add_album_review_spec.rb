@@ -12,7 +12,6 @@ RSpec.feature "a user can leave an album review" do
 
     visit album_path(album)
 
-    click_link "Review album"
     fill_in "Comment", with: "This was terrible."
     click_on "Create Review"
     expect(current_path).to eq(album_path(album))

@@ -511,6 +511,10 @@ h2 {
   margin: 14px 0 0;
 }
 
+.album h4 {
+  font-size: 1.4rem;
+}
+
 .album input[type='submit'] {
   width: 306px;
 }
@@ -637,4 +641,11 @@ h2 {
 #album_expiry_date_2i,
 #album_expiry_date_3i {
   width: 21%;
+}
+
+/* Album Review */
+
+.album footer textarea {
+  display: block;
+  width: 100%;
 }
