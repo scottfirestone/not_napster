@@ -12,7 +12,7 @@ RSpec.feature "Guest can checkout" do
 
     visit carts_path
 
-    click_link "Checkout"
+    click_button "Checkout"
 
     expect(current_path).to eq(login_path)
 
@@ -24,7 +24,7 @@ RSpec.feature "Guest can checkout" do
 
     visit carts_path
 
-    click_link "Checkout"
+    click_button "Checkout"
     expect(current_path).to eq(new_order_path)
 
     expect(page).to have_content("Confirm Your Order")
@@ -56,7 +56,7 @@ RSpec.feature "Guest can checkout" do
 
     visit carts_path
 
-    click_link "Checkout"
+    click_button "Checkout"
 
     click_button "Confirm Order"
 

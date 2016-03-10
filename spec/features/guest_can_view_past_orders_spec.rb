@@ -18,7 +18,7 @@ RSpec.feature "Existing user can view past orders" do
     end
 
     visit carts_path
-    click_link "Checkout"
+    click_button "Checkout"
     click_button "Confirm Order"
 
     visit albums_path
@@ -27,7 +27,7 @@ RSpec.feature "Existing user can view past orders" do
     end
 
     visit carts_path
-    click_link "Checkout"
+    click_button "Checkout"
     click_button "Confirm Order"
 
     visit dashboard_path
