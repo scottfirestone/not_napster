@@ -6,7 +6,7 @@
   <h1>Featured Album</h1>
   <h2><%= link_to @featured_album.title, @featured_album %></h2>
   <h3>by <%= link_to @featured_album.artist.name, @featured_album.artist %></h3>
-  <%= button_to "Add to cart", carts_path(album_id: @featured_album.id)%>
+  <%= button_to "Add to cart", cart_path(album_id: @featured_album.id)%>
 </section>
 
 <div class="container section-container genres-container">
@@ -29,7 +29,7 @@
         <h3 class="album-title"><%= link_to album.title, album %></h3>
         <h3 class="artist"><%= link_to album.artist.name, album.artist %></h3>
         <h3 class="cost">$<%= album.formatted_price %></h3>
-        <%= button_to "Add to cart", carts_path(album_id: album.id)%>
+        <%= button_to "Add to cart", cart_path(album_id: album.id)%>
       </div>
     <% end %>
   </section>

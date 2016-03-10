@@ -13,7 +13,7 @@
     <% if @album.expired? %>
       <p>Album is no longer available.</p>
     <% else %>
-      <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
+      <%= button_to "Add to cart", cart_path(album_id: @album.id)%>
     <% end %>
     <h2><%="Album Comments" %></h2>
     <% @album.reviews.each do |review| %>

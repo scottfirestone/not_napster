@@ -10,7 +10,7 @@ RSpec.feature "Guest can checkout" do
       click_on "Add to cart"
     end
 
-    visit carts_path
+    visit cart_path
 
     click_button "Checkout"
 
@@ -22,7 +22,7 @@ RSpec.feature "Guest can checkout" do
 
     expect(current_path).to eq(dashboard_path)
 
-    visit carts_path
+    visit cart_path
 
     click_button "Checkout"
     expect(current_path).to eq(new_order_path)
@@ -54,7 +54,7 @@ RSpec.feature "Guest can checkout" do
 
     expect(page).to have_content("Cart ( 1 )")
 
-    visit carts_path
+    visit cart_path
 
     click_button "Checkout"
 

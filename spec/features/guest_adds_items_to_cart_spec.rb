@@ -10,7 +10,7 @@ RSpec.feature "Guest adds items to cart" do
     end
     click_link "Cart"
 
-    expect(current_path).to eq(user_cart_path)
+    expect(current_path).to eq(cart_path)
     expect(page).to have_css("img[src*='#{album.image_url}']")
     expect(page).to have_content album.title
     expect(page).to have_content album.description

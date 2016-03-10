@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def index
+  def show
   end
 
   def create
@@ -12,11 +12,11 @@ class CartsController < ApplicationController
 
   def destroy
     @cart.remove_cart_album(params[:id])
-    redirect_to carts_path
+    redirect_to cart_path
   end
 
   def update
     @cart.change_quantity(params["operator"], params[:id])
-    redirect_to carts_path
+    redirect_to cart_path
   end
 end
