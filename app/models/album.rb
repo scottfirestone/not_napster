@@ -17,7 +17,8 @@ class Album < ActiveRecord::Base
   validates :expiry_date, presence: true
 
   def self.discovery(count)
-    limit(count).order("RANDOM()")
+    # unexpired_albums.limit(count).order("RANDOM()")
+    unexpired_albums.sample(4)
   end
 
   def self.unexpired_albums
