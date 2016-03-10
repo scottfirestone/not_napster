@@ -7,5 +7,6 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find_by(slug: params[:id])
+    @review = Review.new
   end
 end

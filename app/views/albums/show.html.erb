@@ -3,7 +3,6 @@
     <%= image_tag @album.image_url %>
     <aside>
       <h1><%= @album.title %></h1>
-      <h2><%= link_to "Review album", new_album_review_path(@album) %></h2>
       <h2><%= link_to "by #{@album.artist.name}", @album.artist %></h2>
     </aside>
   </header>
@@ -16,8 +15,13 @@
       <%= button_to "Add to cart", carts_path(album_id: @album.id)%>
     <% end %>
     <h2><%="Album Comments" %></h2>
+    <%= form_for([@album, @review]) do |f| %>
+        <%= f.label :comment %>
+        <%= f.text_area :comment %>
+        <%= f.submit %>
+    <% end %>
     <% @album.reviews.each do |review| %>
-      <h3>* <%= review.comment %></h3>
+      <h4>* <%= review.comment %></h4>
     <% end %>
   </footer>
 </section>
