@@ -18,4 +18,4 @@ In it's essence, Not Napster is an e-commerce site for buying/selling mp3 codes 
 
 ### Team
 
-This project was developed by [Scott Firestone](https://github.com/scottfirestone), [Julian Feliciano](https://github.com/julsfelic), [Admir Dragonovic](https://github.com/Draganovic), and [Alex Navarette](https://github.com/Salvi6God)
+This project was developed by [Scott Firestone](https://github.com/scottfirestone), [Julian Feliciano](https://github.com/julsfelic), [Admir Dragonovic](https://github.com/Draganovic), and [Alex Navarrete](https://github.com/Salvi6God)
