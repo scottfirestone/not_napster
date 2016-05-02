@@ -4,7 +4,7 @@
 
 ### Background
 
-This project is for the (Little Shop of Horrors)[https://github.com/turingschool/curriculum/blob/master/source/projects/little_shop.markdown] assignment for the Turing School of Software and Design. 
+This project is for the [Little Shop](https://github.com/turingschool/curriculum/blob/master/source/projects/little_shop.markdown) assignment for the Turing School of Software and Design. 
 
 In it's essence, Not Napster is an e-commerce site for buying/selling mp3 codes of popular albums. New albums on vinyl often come with a redeemable code for a digital version of the album. This project creates a marketplace for buying/selling these codes among third parties.
 
@@ -18,4 +18,4 @@ In it's essence, Not Napster is an e-commerce site for buying/selling mp3 codes 
 
 ### Team
 
-* This project was developed by [Scott Firestone](https://github.com/scottfirestone), [Julian Feliciano](https://github.com/julsfelic), [Admir Dragonovic](https://github.com/Draganovic), and [Alex Navarette](https://github.com/Salvi6God)
+This project was developed by [Scott Firestone](https://github.com/scottfirestone), [Julian Feliciano](https://github.com/julsfelic), [Admir Dragonovic](https://github.com/Draganovic), and [Alex Navarette](https://github.com/Salvi6God)
